@@ -22,54 +22,54 @@ Author: Andre Guimaraes
 | issue_month          | 1.29686e+06 | 6.514445264372974             | 1.0                 | 3.0                 | 7.0                 | 10.0                | 12.0                |     3.4417   | Month of the year the loan was issued                                                                                           |
 | issue_year           | 1.29686e+06 | 2015.1304002510678            | 2012.0              | 2014.0              | 2015.0              | 2016.0              | 2018.0              |     1.42295  | Year the loan was issued                                                                                                        |
 ![Alt Text](## Violin of Loan Amount By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/08-Violin_of_Loan_Amount_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/08-Violin_of_Loan_Amount_By_Loan_Status.png)
 ![Alt Text](## Distribution of Earliest Credit Line Date By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/16-Distribution_of_Earliest_Credit_Line_Date_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/16-Distribution_of_Earliest_Credit_Line_Date_By_Loan_Status.png)
 ![Alt Text](## Distribution of Loan Grade By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/09-Distribution_of_Loan_Grade_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/09-Distribution_of_Loan_Grade_By_Loan_Status.png)
 ![Alt Text](## Violin of Installments By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/07-Violin_of_Installments_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/07-Violin_of_Installments_By_Loan_Status.png)
 ![Alt Text](## Distribution of Interest Rate By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/05-Distribution_of_Interest_Rate_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/05-Distribution_of_Interest_Rate_By_Loan_Status.png)
 ![Alt Text](## Distribution of Revol Util By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/19-Distribution_of_Revol_Util_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/19-Distribution_of_Revol_Util_By_Loan_Status.png)
 ![Alt Text](## Distribution of Loan Amount By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/04-Distribution_of_Loan_Amount_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/04-Distribution_of_Loan_Amount_By_Loan_Status.png)
 ![Alt Text](## Distribution of Issue Date By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/15-Distribution_of_Issue_Date_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/15-Distribution_of_Issue_Date_By_Loan_Status.png)
 ![Alt Text](## Distribution of Loan Purpose By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/14-Distribution_of_Loan_Purpose_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/14-Distribution_of_Loan_Purpose_By_Loan_Status.png)
 ![Alt Text](## Distribution of Revol Bal By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/20-Distribution_of_Revol_Bal_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/20-Distribution_of_Revol_Bal_By_Loan_Status.png)
 ![Alt Text](## Distribution of Annual Income By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/06-Distribution_of_Annual_Income_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/06-Distribution_of_Annual_Income_By_Loan_Status.png)
 ![Alt Text](## Distribution of Term Length By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/13-Distribution_of_Term_Length_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/13-Distribution_of_Term_Length_By_Loan_Status.png)
 ![Alt Text](## Loan Status Distribution
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/01-Loan_Status_Distribution.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/01-Loan_Status_Distribution.png)
 ![Alt Text](## numerical statistics
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/00-numerical_statistics.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/00-numerical_statistics.png)
 ![Alt Text](## Distribution of Loan Sub Grade By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/10-Distribution_of_Loan_Sub_Grade_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/10-Distribution_of_Loan_Sub_Grade_By_Loan_Status.png)
 ![Alt Text](## Distribution of Debt To Income By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/17-Distribution_of_Debt_To_Income_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/17-Distribution_of_Debt_To_Income_By_Loan_Status.png)
 ![Alt Text](## Distribution of Income Verification Status By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/12-Distribution_of_Income_Verification_Status_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/12-Distribution_of_Income_Verification_Status_By_Loan_Status.png)
 ![Alt Text](## Distribution of Number Of Open Accounts By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/18-Distribution_of_Number_Of_Open_Accounts_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/18-Distribution_of_Number_Of_Open_Accounts_By_Loan_Status.png)
 ![Alt Text](## Distribution of Application Type By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/23-Distribution_of_Application_Type_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/23-Distribution_of_Application_Type_By_Loan_Status.png)
 ![Alt Text](## Distribution of Number of Public Records By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/21-Distribution_of_Number_of_Public_Records_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/21-Distribution_of_Number_of_Public_Records_By_Loan_Status.png)
 ![Alt Text](## Distribution of Initial Listing Status By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/22-Distribution_of_Initial_Listing_Status_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/22-Distribution_of_Initial_Listing_Status_By_Loan_Status.png)
 ![Alt Text](## Distribution of Number of Public Record Bankruptcies By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/25-Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/25-Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status.png)
 ![Alt Text](## Correlation Matrix
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/02-Correlation_Matrix.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/02-Correlation_Matrix.png)
 ![Alt Text](## Distribution of Installments By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/03-Distribution_of_Installments_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/03-Distribution_of_Installments_By_Loan_Status.png)
 ![Alt Text](## Correlation Between Loan Status And Numerical Features
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/26-Correlation_Between_Loan_Status_And_Numerical_Features.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/26-Correlation_Between_Loan_Status_And_Numerical_Features.png)
 ![Alt Text](## Distribution of Home Ownership Status By Loan Status
-https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/outputs/test_tag/figures/11-Distribution_of_Home_Ownership_Status_By_Loan_Status.png)
+https://raw.githubusercontent.com/Andrerg01/All_Lending_Club_ML_Analysis/main/outputs/test_tag/figures/11-Distribution_of_Home_Ownership_Status_By_Loan_Status.png)
