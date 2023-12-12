@@ -141,3 +141,5 @@ cython_debug/
 
 # My own ignores
 data
+outputs/*/data
+tmp

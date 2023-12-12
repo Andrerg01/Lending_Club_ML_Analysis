@@ -1,0 +1,18 @@
+,count,mean,min,25%,50%,75%,max,std,description
+loan_amnt,1296861.0,14522.782164009866,1000.0,8000.0,12000.0,20000.0,40000.0,8734.654570012222,The listed amount of the loan applied for by the borrower.
+term_months,1296861.0,41.775773964981596,36.0,36.0,36.0,36.0,60.0,10.259585343936278,The length of the loan term in months.
+int_rate,1296861.0,13.279633885204358,5.31,9.75,12.79,16.02,30.99,4.794105031257577,Interest rate of the loan.
+installment,1296861.0,441.6820788426826,4.93,251.36,377.41,585.63,1719.83,262.2043593026021,The monthly payment owed by the borrower if the loan originates.
+annual_inc,1296861.0,76521.22443962768,16.0,46000.0,65000.0,90480.0,10999200.0,70150.96660261229,The self-reported annual income provided by the borrower during registration.
+dti,1296861.0,18.458561356999706,-1.0,11.95,17.78,24.29,999.0,11.253319827962814,Debt-to-income ratio calculated using the borrower’s total monthly debt payments divided by their self-reported monthly income.
+earliest_cr_line,1296861,1999-03-30 00:24:56.405859968,1934-04-01 00:00:00,1995-05-01 00:00:00,2000-08-01 00:00:00,2004-07-01 00:00:00,2015-10-01 00:00:00,,The month and year the borrower’s earliest reported credit line was opened.
+open_acc,1296861.0,11.680264114658394,1.0,8.0,11.0,14.0,90.0,5.491325268583614,The number of open credit lines in the borrower’s credit file.
+pub_rec,1296861.0,0.22136759452246618,0.0,0.0,0.0,0.0,86.0,0.6105196477505017,"Number of derogatory public records, such as bankruptcy filings, tax liens, or judgments."
+revol_bal,1296861.0,16349.187597591415,0.0,6014.0,11199.0,19842.0,2904836.0,22517.311693181688,The total amount of credit revolving balances.
+revol_util,1296861.0,51.87276932531705,0.0,33.6,52.2,70.6,892.3,24.37842940357225,"Revolving line utilization rate, or the amount of credit the borrower is using relative to all available revolving credit."
+total_acc,1296861.0,25.09046304885412,2.0,16.0,23.0,32.0,176.0,12.011190126684399,The total number of credit lines currently in the borrower’s credit file.
+mort_acc,1296861.0,1.6706285407611148,0.0,0.0,1.0,3.0,51.0,2.0004156359438965,Number of mortgage accounts.
+pub_rec_bankruptcies,1296861.0,0.1378937295515865,0.0,0.0,0.0,0.0,12.0,0.3824908061022997,Number of public record bankruptcies.
+issue_d,1296861,2015-08-04 01:53:30.061834496,2012-03-01 06:00:00,2014-08-01 05:00:00,2015-09-01 05:00:00,2016-07-01 05:00:00,2018-12-01 06:00:00,,Date the loan is issued
+issue_month,1296861.0,6.514445264372974,1.0,3.0,7.0,10.0,12.0,3.441699587887795,Month of the year the loan was issued
+issue_year,1296861.0,2015.1304002510678,2012.0,2014.0,2015.0,2016.0,2018.0,1.4229548771077232,Year the loan was issued

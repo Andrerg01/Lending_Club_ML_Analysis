@@ -1,0 +1,49 @@
+2023-12-12 12:40:38: Loading Data
+2023-12-12 12:41:32: Creating Proper Columns
+2023-12-12 12:41:41: Computing Numerical Statistics for Interesting Columns
+2023-12-12 12:41:43: Plotting Loan_Status_Distribution
+2023-12-12 12:41:48: Plotting Correlation_Matrix
+2023-12-12 12:41:49: Plotting Distribution_of_Installments_By_Loan_Status
+2023-12-12 12:41:51: Plotting Distribution_of_Loan_Amount_By_Loan_Status
+2023-12-12 12:41:53: Plotting Distribution_of_Interest_Rate_By_Loan_Status
+2023-12-12 12:41:55: Plotting Distribution_of_Annual_Income_By_Loan_Status
+2023-12-12 12:41:57: Plotting Violin_of_Installments_By_Loan_Status
+2023-12-12 12:42:11: Plotting Violin_of_Loan_Amount_By_Loan_Status
+2023-12-12 12:42:25: Plotting Distribution_of_Loan_Grade_By_Loan_Status
+2023-12-12 12:42:31: Plotting Distribution_of_Loan_Sub_Grade_By_Loan_Status
+2023-12-12 12:42:41: Plotting Distribution_of_Home_Ownership_Status_By_Loan_Status
+2023-12-12 12:42:50: Plotting Distribution_of_Income_Verification_Status_By_Loan_Status
+2023-12-12 12:43:00: Plotting Distribution_of_Term_Length_By_Loan_Status
+2023-12-12 12:43:06: Plotting Distribution_of_Loan_Purpose_By_Loan_Status
+2023-12-12 12:43:15: Plotting Distribution_of_Issue_Date_By_Loan_Status
+2023-12-12 12:43:22: Plotting Distribution_of_Earliest_Credit_Line_Date_By_Loan_Status
+2023-12-12 12:43:28: Plotting Distribution_of_Debt_To_Income_By_Loan_Status
+2023-12-12 12:43:30: Plotting Distribution_of_Number_Of_Open_Accounts_By_Loan_Status
+2023-12-12 12:43:32: Plotting Distribution_of_Revol_Util_By_Loan_Status
+2023-12-12 12:43:34: Plotting Distribution_of_Revol_Bal_By_Loan_Status
+2023-12-12 12:43:36: Plotting Distribution_of_Number_of_Public_Records_By_Loan_Status
+2023-12-12 12:43:43: Plotting Distribution_of_Initial_Listing_Status_By_Loan_Status
+2023-12-12 12:43:49: Plotting Distribution_of_Application_Type_By_Loan_Status
+2023-12-12 12:43:59: Plotting Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status
+2023-12-12 12:44:07: Plotting Correlation_Between_Loan_Status_And_Numerical_Features
+2023-12-12 12:44:07: Done!
+2023-12-12 14:37:01: Reading Columns Full Names
+2023-12-12 14:39:52: Reading Columns Full Names
+2023-12-12 14:39:52: Reading Columns Descriptions
+2023-12-12 14:40:10: Reading Columns Full Names
+2023-12-12 14:40:10: Reading Columns Descriptions
+2023-12-12 14:40:16: Reading Columns Full Names
+2023-12-12 14:40:16: Reading Columns Descriptions
+2023-12-12 14:40:24: Reading Columns Full Names
+2023-12-12 14:40:24: Reading Columns Descriptions
+2023-12-12 14:40:24: Loading data CSV
+2023-12-12 14:40:48: Reading Columns Full Names
+2023-12-12 14:40:48: Reading Columns Descriptions
+2023-12-12 14:40:48: Loading data CSV
+2023-12-12 14:42:30: Loading Metadata
+2023-12-12 14:42:30: Creating UNIX columns for dates
+2023-12-12 15:27:03: Creating other interesting columns
+2023-12-12 15:27:07: Dropping proper columns
+2023-12-12 15:27:53: Filling proper columns
+2023-12-12 15:27:53: Casting columns in proper types
+2023-12-12 15:28:00: Adjusting all missing values to pd.NA

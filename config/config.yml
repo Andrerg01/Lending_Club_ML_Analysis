@@ -1,0 +1,24 @@
+base:
+    tag: 'prototype'
+    database_file: 'data/All_Lending_Club_Loan_2007_2018.sqlite'
+    columns_of_interest: ['id', 'loan_amnt', 'term_months', 'int_rate', 'installment', 'grade', 'sub_grade',
+                       'home_ownership', 'annual_inc', 'verification_status',
+                       'issue_d_unix', 'loan_status', 'purpose', 'dti', 'earliest_cr_line', 
+                       'open_acc', 'pub_rec', 'revol_bal', 'revol_util', 'total_acc', 'initial_list_status',
+                       'application_type', 'mort_acc', 'pub_rec_bankruptcies']
+    git_repo: 'https://github.com/Andrerg01/All_Lending_Club_ML_Analysis'
+
+data:
+    input_csv: 'data/accepted_2007_to_2018Q4.csv'
+    output_sqlite: 'All_Lending_Club_Loan_2007_2018.sqlite'
+    column_names_file: 'data/column_full_names.json'
+    column_descriptions_file: 'data/columns_descriptions.json'
+
+plotting:
+    fontsize: 16
+    figure_xsize: 10
+    figure_ysize: 6.17
+    
+logging:
+    out-dir: 'log'
+    verbose: True
