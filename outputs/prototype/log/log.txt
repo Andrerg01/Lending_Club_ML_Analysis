@@ -80,3 +80,26 @@
 2023-12-13 11:01:51: Loading data CSV
 2023-12-13 11:03:43: Loading Metadata
 2023-12-13 11:03:43: Finding Date Columns
+2023-12-13 11:03:54: Creating UNIX Timestamp Columns for Dates
+2023-12-13 11:03:54: Converting column debt_settlement_flag_date to UNIX time
+2023-12-13 11:03:55: Converting column earliest_cr_line to UNIX time
+2023-12-13 11:03:55: Converting column hardship_end_date to UNIX time
+2023-12-13 11:03:55: Converting column hardship_start_date to UNIX time
+2023-12-13 11:03:55: Converting column issue_d to UNIX time
+2023-12-13 11:03:55: Converting column last_credit_pull_d to UNIX time
+2023-12-13 11:03:55: Converting column last_pymnt_d to UNIX time
+2023-12-13 11:03:56: Converting column next_pymnt_d to UNIX time
+2023-12-13 11:03:56: Converting column payment_plan_start_date to UNIX time
+2023-12-13 11:03:56: Converting column sec_app_earliest_cr_line to UNIX time
+2023-12-13 11:03:56: Converting column settlement_date to UNIX time
+2023-12-13 11:03:56: Creating interesting columns
+2023-12-13 11:03:58: Dropping uninteresting columns
+2023-12-13 11:03:58: Dropping column member_id
+2023-12-13 11:04:01: Dropping column term
+2023-12-13 11:04:04: Dropping column emp_length
+2023-12-13 11:04:07: Dropping column debt_settlement_flag_date
+2023-12-13 11:04:10: Dropping column earliest_cr_line
+2023-12-13 11:04:13: Dropping column hardship_end_date
+2023-12-13 11:04:15: Dropping column hardship_start_date
+2023-12-13 11:04:18: Dropping column issue_d
+2023-12-13 11:04:20: Dropping column last_credit_pull_d
