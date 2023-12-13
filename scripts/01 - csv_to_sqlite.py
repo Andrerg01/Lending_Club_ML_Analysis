@@ -16,6 +16,16 @@ print("Defining Classes")
 
 # Define a Logger class to handle logging operations
 class Logger:
+    """
+    A class for logging messages to a file.
+
+    Attributes:
+        config (dict): The configuration settings.
+        log_dir (str): The directory for storing log files.
+        tag (str): The tag for identifying the log files.
+        file_path (str): The path to the log file.
+        verbose (bool): Flag indicating whether to print log messages to the console.
+    """
     def __init__(self, config):
         # Constructor to initialize the Logger instance
         self.config = config  # Store the provided configuration
@@ -26,6 +36,12 @@ class Logger:
         self.verbose = config['logging']['verbose']  # Verbose flag to control output
         
     def log(self, message):
+        """
+        Logs a message to the log file.
+
+        Args:
+            message (str): The message to be logged.
+        """
         # Method to log a message
         current_datetime = datetime.datetime.now()  # Get the current date and time
         # Format the datetime as a string
@@ -38,7 +54,7 @@ class Logger:
         with open(self.file_path, "a") as f:
             # Open the log file in append mode and write the log message
             f.write(f'{log_message}\n')
-# Print a message indicating the script is defining functions
+
 print("Defining Functions")
 
 def convert_to_unix_time(date_str):
@@ -104,7 +120,6 @@ def create_directory_if_not_exists(directory):
         # Return a message stating the directory already exists
         return f"Directory already exists: {directory}"
 
-# Print a message indicating the script is reading command line arguments
 print("Reading Command Line Arguments")
 
 # Initialize an argument parser for command line argument parsing
@@ -120,14 +135,12 @@ args = parser.parse_args()
 # Store the path to the configuration file from the parsed arguments
 config_file_path = args.config_file_path
 
-# Print a message indicating the script is reading the configuration file
 print(f"Reading Config File {config_file_path}")
 
 # Open and read the configuration file using YAML
 with open(config_file_path, 'r') as f:
     config = yaml.safe_load(f)
     
-# Print a message indicating the script is defining variables and creating directories
 print("Defining Variables and Creating Directories")
 
 # Extract various configuration settings from the config file
@@ -142,17 +155,18 @@ sqlite_file = os.path.join(f'outputs/{tag}/data/{sqlite_file}')
 
 # Create necessary directories and print the result
 print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/data/')))
+print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/log/')))
+print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/figure/')))
+print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/stats/')))
+print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/reports/')))
 
-# Print a message indicating the script is initializing the logger
 print("Initializing Logger")
 
 # Initialize a Logger instance using the configuration
 logger = Logger(config)
 
-# Log a message indicating that the logger has been initialized
 logger.log("----------------------Logger Initialized for csv_to_sqlite.py----------------------")
 
-# Log a message about reading column full names
 logger.log("Reading Columns Full Names")
 
 # Open and read the full column names file using JSON
@@ -250,7 +264,16 @@ for column in drop_columns:
 logger.log("Filling NaNs on some columns")
 
 # Define a list of columns where NaN values will be filled with -1
-fillna_neg_one_columns = [...]
+fillna_neg_one_columns = ['tot_coll_amt', 'tot_cur_bal', 'all_util', 'annual_inc_joint', 'bc_open_to_buy',
+                         'deferral_term', 'collection_recovery_fee', 'hardship_last_payment_amount',
+                         'hardship_payoff_balance_amount', 'max_bal_bc', 'mo_sin_old_il_acct', 'mo_sin_old_rev_tl_op',
+                         'mo_sin_rcnt_rev_tl_op', 'mo_sin_rcnt_tl', 'mths_since_last_delinq', 'mths_since_last_major_derog',
+                         'mths_since_last_record', 'mths_since_rcnt_il', 'mths_since_recent_bc', 'mths_since_recent_bc_dlq',
+                         'mths_since_recent_inq', 'mths_since_recent_revol_delinq', 'revol_bal_joint',
+                         'sec_app_fico_range_high', 'sec_app_fico_range_low', 'sec_app_mort_acc', 
+                         'sec_app_mths_since_last_major_derog', 'settlement_amount', 'settlement_percentage',
+                         'settlement_term', 'zip_code', 'total_rev_hi_lim', 'tot_hi_cred_lim', 'total_bc_limit',
+                         'total_il_high_credit_limit']
 
 # Iterate through each column in the fillna_neg_one_columns list
 for column in fillna_neg_one_columns:
@@ -259,12 +282,20 @@ for column in fillna_neg_one_columns:
 
     # Fill NaN values in the column with -1
     df[column].fillna(-1, inplace=True)
-    
-# Log a message about starting to fill NaN values in specific columns with 0
-logger.log(f'Filling NaNs in column {column} with 0')
 
 # Define a list of columns where NaN values will be filled with 0
-fillna_zero_columns = [...]
+fillna_zero_columns = ['acc_now_delinq', 'acc_open_past_24mths', 'annual_inc', 'avg_cur_bal',
+                       'chargeoff_within_12_mths', 'collections_12_mths_ex_med', 'delinq_2yrs',
+                       'delinq_amnt', 'hardship_amount', 'hardship_dpd', 'hardship_length',
+                       'inq_fi', 'inq_last_12m', 'inq_last_6mths', 'mort_acc', 'num_accts_ever_120_pd',
+                       'num_actv_bc_tl', 'num_actv_rev_tl', 'num_tl_120dpd_2m', 'open_acc_6m',
+                       'open_act_il', 'open_il_12m', 'open_il_24m', 'open_rv_12m', 'open_rv_24m',
+                       'orig_projected_additional_accrued_interest', 'sec_app_chargeoff_within_12_mths',
+                       'sec_app_collections_12_mths_ex_med', 'sec_app_inq_last_6mths', 'sec_app_num_rev_accts',
+                       'sec_app_open_acc', 'sec_app_open_act_il', 'total_bal_il', 'total_cu_tl', 'open_acc',
+                       'pub_rec', 'total_acc', 'num_bc_sats', 'num_bc_tl', 'num_il_tl', 'num_op_rev_tl',
+                       'num_rev_accts', 'num_rev_tl_bal_gt_0', 'num_sats', 'num_tl_30dpd', 'num_tl_90g_dpd_24m',
+                       'num_tl_op_past_12m', 'pub_rec_bankruptcies', 'tax_liens', 'total_bal_ex_mort']
 
 # Iterate through each column in the fillna_zero_columns list
 for column in fillna_zero_columns:

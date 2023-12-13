@@ -1,44 +1,71 @@
 print("Starting Up")
-import pandas as pd
-import sqlite3
-import numpy as np
-import datetime
-import seaborn as sns
-import matplotlib.pyplot as plt
-from matplotlib.ticker import MaxNLocator
-import os
-import yaml
-import argparse
+import pandas as pd # Data manipulation
+import sqlite3 # Database connection
+import numpy as np # Numerical computation
+import datetime # Date manipulation
+import seaborn as sns # Plotting
+import matplotlib.pyplot as plt # Plotting
+import os # File manipulation
+import yaml # Config file parsing
+import argparse # Command line argument parsing
 
 print("Defining Classes")
+# Defining a class for logging messages to a file
 class Logger:
+    """
+    A class for logging messages to a file.
+
+    Attributes:
+        config (dict): The configuration settings.
+        log_dir (str): The directory for storing log files.
+        tag (str): The tag for identifying the log files.
+        file_path (str): The path to the log file.
+        verbose (bool): Flag indicating whether to print log messages to the console.
+    """
     def __init__(self, config):
-        self.config = config
-        self.log_dir = config['logging']['out-dir']
-        self.tag = config['base']['tag']
+        # Constructor to initialize the Logger instance
+        self.config = config  # Store the provided configuration
+        self.log_dir = config['logging']['out-dir']  # Directory to output logs
+        self.tag = config['base']['tag']  # Tag for the log (e.g., identifying the run)
+        # Construct the file path for the log file
         self.file_path = os.path.join('outputs', self.tag, self.log_dir, 'log.txt')
-        self.verbose = config['logging']['verbose']
+        self.verbose = config['logging']['verbose']  # Verbose flag to control output
         
     def log(self, message):
-        current_datetime = datetime.datetime.now()
+        """
+        Logs a message to the log file.
+
+        Args:
+            message (str): The message to be logged.
+        """
+        # Method to log a message
+        current_datetime = datetime.datetime.now()  # Get the current date and time
+        # Format the datetime as a string
         datetime_string = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+        # Format the log message with a timestamp
         log_message = f"{datetime_string}: {message}"
         if self.verbose:
+            # If verbose mode is on, print the log message to the console
             print(log_message)
         with open(self.file_path, "a") as f:
+            # Open the log file in append mode and write the log message
             f.write(f'{log_message}\n')
             
 print("Defining Functions")
-    
-def transform_type(TYPE):
-    if TYPE == 'INT':
-        return 'int64'
-    elif TYPE == 'REAL':
-        return 'float64'
-    else:
-        return 'object'
-    
+
 def loan_status_to_int(status):
+    """
+    Converts loan status to an integer value.
+
+    Parameters:
+    status (str): The loan status.
+
+    Returns:
+    int: The corresponding integer value for the loan status.
+         - 0 for 'Charged Off'
+         - 1 for 'Fully Paid'
+         - -1 for any other status
+    """
     if status == 'Charged Off':
         return 0
     if status == 'Fully Paid':
@@ -47,132 +74,157 @@ def loan_status_to_int(status):
         return -1
 
 def bestbandwidth(data):
+    """
+    Calculate the optimal bandwidth for kernel density estimation using the Silverman's rule of thumb.
+
+    Parameters:
+    data (array-like): The input data for which the bandwidth needs to be calculated.
+
+    Returns:
+    float: The optimal bandwidth value.
+
+    """
     return 1.06*np.std(data)*len(data)**(-1/5)
 
 def create_directory_if_not_exists(directory):
+    """
+    Create a directory if it does not already exist.
+    :param directory: Path of the directory to be created.
+    :return: A message stating whether the directory was created or already exists.
+    """
+    # Check if the directory does not exist
     if not os.path.exists(directory):
+        # Create the directory
         os.makedirs(directory)
         return f"Created directory: {directory}"
     else:
+        # Return a message stating the directory already exists
         return f"Directory already exists: {directory}"
+
+def transform_type(sqlite_type):
+    """
+    Transforms the SQLite data type to a Python data type.
+
+    Parameters:
+    sqlite_type (str): The SQLite data type.
+
+    Returns:
+    str: The corresponding Python data type.
+    """
+    if sqlite_type == 'INTEGER':
+        return 'int'
+    if sqlite_type == 'REAL':
+        return 'float'
+    else:
+        return 'object'
 
 print("Reading Command Line Arguments")
 
+# Initialize an argument parser for command line argument parsing
 parser = argparse.ArgumentParser(description="Read configuration file.")
 
+# Add an argument for the configuration file path
+# This argument is required and takes a string as input
 parser.add_argument("--config", required=True, help="Path to the config file", dest="config_file_path")
 
+# Parse the command line arguments
 args = parser.parse_args()
 
+# Store the path to the configuration file from the parsed arguments
 config_file_path = args.config_file_path
 
+
 print(f"Reading Config File {config_file_path}")
+
+# Open and read the configuration file using YAML
 with open(config_file_path, 'r') as f:
     config = yaml.safe_load(f)
 
 print("Defining Variables and Creating Directories")
 
+# Extract various configuration settings from the config file
 database_file = config['base']['database_file']
-
 columns_of_interest = config['base']['columns_of_interest']
-
 tag = config['base']['tag']
-
 git_repo = config['base']['git_repo']
+fontsize = config['plotting']['fontsize']
+figsize_x = config['plotting']['figure_xsize']
+figsize_y = config['plotting']['figure_ysize']
 
+# Create the output directories
 out_dir_figures = f"outputs/{tag}/figures"
 out_dir_stats = f"outputs/{tag}/stats"
 out_dir_log = f"outputs/{tag}/log"
 
-# Create the directories
-print(create_directory_if_not_exists(out_dir_figures))
-print(create_directory_if_not_exists(out_dir_stats))
-print(create_directory_if_not_exists(out_dir_log))
-
 print("Initializing Logger")
 
+# Initialize a Logger instance using the configuration
 logger = Logger(config)
 
+logger.log("----------------------Logger Initialized for exploratory_data_analysis.py----------------------")
+
 logger.log("Loading Data")
+
 # Defining the connection to the database
 conn = sqlite3.connect(database_file)
 
+# Defining the query to fetch the descriptions
+description_fetch_query = f"""SELECT *  FROM descriptions """
+
 # Loading descriptions into dataframe
-description_fetch_query = f"""SELECT *
-                    FROM descriptions
-                    """
 descriptions = pd.read_sql_query(description_fetch_query, conn, index_col = 'name')
 
+# Loading the type of each column for the loans_data table
 column_types = {idx:transform_type(row['data_type']) for idx, row in descriptions.iterrows() if row['location'] == 'loans_data' and idx in columns_of_interest}
 
-conditions_string = f'WHERE {columns_of_interest[0]} IS NOT NULL ' + ' '.join([f'AND {col} IS NOT NULL' for col in columns_of_interest[1:]])
-# Loading data into dataframe
+# Defining the query to fetch the data
 data_fetch_query = f"""SELECT {', '.join(columns_of_interest)} 
                        FROM loans_data
-                       {conditions_string}
-                       ORDER BY RANDOM()"""
+                       ORDER BY RANDOM()
+                       LIMIT 10000"""
+
+# Loading the data into a dataframe
 loans_data = pd.read_sql_query(data_fetch_query, conn, index_col='id', dtype=column_types)
 
 # Closing connection
 conn.close()
 
-logger.log("Creating Proper Columns")
-loans_data['mort_acc'] = loans_data['mort_acc'].astype('float').astype('int')
-loans_data['pub_rec_bankruptcies'] = loans_data['pub_rec_bankruptcies'].astype('float').astype('int')
-loans_data['revol_util'] = loans_data['revol_util'].astype('float')
-loans_data['term_months'] = loans_data['term_months'].astype('int')
+# Filtering out columns that are known to be bad
+logger.log("Filtering known bad columns")
+loans_data = loans_data[loans_data['issue_d_unix'] != 0]
+
+# Creating new useful columns
+logger.log("Creating columns")
+
+# Creating a column for loan issue date in pd.datetime format
+loans_data['issue_d'] = pd.to_datetime(loans_data['issue_d_unix'], unit='s')
 descriptions = pd.concat([descriptions, pd.DataFrame({
     'name':['issue_d'],
     'full_name': ['Issue Date'],
     'type': ['Column'],
     'location': ['loans_data'],
-    'description': ['Date the loan is issued'],
+    'description': ['Date the loan was issued'],
     'data_type': ['TEXT']
 }).set_index('name')])
 
-loans_data['issue_d'] = pd.to_datetime(loans_data['issue_d_unix'], unit='s')
-loans_data['earliest_cr_line'] = pd.to_datetime(loans_data['earliest_cr_line'])
-loans_data['issue_month'] = loans_data['issue_d'].apply(lambda x: x.month)
-descriptions = pd.concat([descriptions, pd.DataFrame({
-    'name':['issue_month'],
-    'full_name': ['Issue Month'],
-    'type': ['Column'],
-    'location': ['loans_data'],
-    'description': ['Month of the year the loan was issued'],
-    'data_type': ['INT']
-}).set_index('name')])
-
-loans_data['issue_year'] = loans_data['issue_d'].apply(lambda x: x.year)
-descriptions = pd.concat([descriptions, pd.DataFrame({
-    'name':['issue_year'],
-    'full_name': ['Issue Year'],
-    'type': ['Column'],
-    'location': ['loans_data'],
-    'description': ['Year the loan was issued'],
-    'data_type': ['INT']
-}).set_index('name')])
-
+# We only care about the instances where the loan defaulted or was fully paid.
+logger.log("Limiting dataset to two types of Loan Status only")
 loans_data = loans_data[(loans_data['loan_status'] == 'Charged Off') | (loans_data['loan_status'] == 'Fully Paid')]
 
-logger.log("Computing Numerical Statistics for Interesting Columns")
+logger.log("Computing Numerical Statistics for All Columns")
 # Calculating descriptive statistics for the numerical columns
 numerical_stats = loans_data.describe().transpose()
 
 # Adding description of each row
 numerical_stats['description'] = [descriptions.loc[name]['description'] for name in numerical_stats.index]
+
 # Displaying the descriptive statistics
 numerical_stats.to_csv(f"{out_dir_stats}/Numerical_Statistics.csv")
 
-fontsize = config['plotting']['fontsize']
-figsize_x = config['plotting']['figure_xsize']
-figsize_y = config['plotting']['figure_ysize']
-
+logger.log("Plotting Loan_Status_Distribution")
 fig, ax = plt.subplots(figsize=[10, 10/1.62])
-
 # Define the order of the grades and sub-grades
 loan_status_order = sorted(loans_data['loan_status'].unique())[::-1]
-
-logger.log("Plotting Loan_Status_Distribution")
 # Plot the counts of each grade with hue set to 'loan_status'
 sns.countplot(data=loans_data, x='loan_status', ax=ax, order=loan_status_order)
 ax.set_xlabel(descriptions.loc['loan_status']['full_name'], fontsize=fontsize)
@@ -184,22 +236,17 @@ fig.savefig(f'{out_dir_figures}/01-Loan_Status_Distribution.png')
 
 plt.close("all")
 
+logger.log("Plotting Correlation_Matrix")
 # Filter the DataFrame to include only numerical columns
 numerical_data = loans_data.select_dtypes(include=['int64', 'float64'])
-
 # Compute the correlation matrix
 correlation_matrix = numerical_data.corr()
-
 # Get the full names for each column
 full_names = [descriptions.loc[col]['full_name'] for col in numerical_data.columns]
-
-logger.log("Plotting Correlation_Matrix")
 # Set up the matplotlib figure
 fig, ax = plt.subplots(figsize=(len(numerical_data.columns)*1, len(numerical_data.columns)*1))
-
 # Draw the heatmap with the axis object
 sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap='coolwarm', square=True, linewidths=.5, ax=ax)
-
 # Set the tick labels as the full names
 ax.set_xticklabels(full_names, rotation=45, ha="right")
 ax.set_yticklabels(full_names, rotation=0)
@@ -211,12 +258,9 @@ fig.savefig(f'{out_dir_figures}/02-Correlation_Matrix.png')
 
 plt.close("all")
 
-# Your existing setup
-loan_status_values = loans_data['loan_status'].unique()
-
 logger.log("Plotting Distribution_of_Installments_By_Loan_Status")
+loan_status_values = loans_data['loan_status'].unique()
 fig, ax = plt.subplots(figsize=[10, 10/1.62])
-
 best_bw_installment = bestbandwidth(loans_data['installment'])
 nBins_installment = int((loans_data['installment'].max() - loans_data['installment'].min())/best_bw_installment)
 bins_installment = np.linspace(loans_data['installment'].min(), loans_data['installment'].max(), nBins_installment)
@@ -434,22 +478,6 @@ fig.savefig(f'{out_dir_figures}/15-Distribution_of_Issue_Date_By_Loan_Status.png
 
 plt.close("all")
 
-logger.log("Plotting Distribution_of_Earliest_Credit_Line_Date_By_Loan_Status")
-fig, ax = plt.subplots(figsize = [10, 10/1.62])
-
-for loan_status in loan_status_values:
-    mask = loans_data['loan_status'] == loan_status
-    sns.histplot(loans_data[mask]['earliest_cr_line'], label=loan_status, ax=ax, element="step", kde=False, alpha=0.5, edgecolor='b')
-ax.set_xlabel(descriptions.loc['earliest_cr_line']['full_name'], fontsize=fontsize)
-ax.set_ylabel('Counts', fontsize=fontsize)
-ax.set_title("Distribution of Earliest Credit Line Date by Loan Status", fontsize=fontsize)
-ax.legend()
-fig.tight_layout()
-
-fig.savefig(f'{out_dir_figures}/16-Distribution_of_Earliest_Credit_Line_Date_By_Loan_Status.png')
-
-plt.close("all")
-
 logger.log("Plotting Distribution_of_Debt_To_Income_By_Loan_Status")
 fig, ax = plt.subplots(figsize = [10, 10/1.62])
 
@@ -465,7 +493,7 @@ ax.set_title("Distribution of Debt To Income Ratio by Loan Status", fontsize=fon
 ax.legend()
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/17-Distribution_of_Debt_To_Income_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/16-Distribution_of_Debt_To_Income_By_Loan_Status.png')
 
 plt.close("all")
 
@@ -484,7 +512,7 @@ ax.set_title("Distribution of Number of Open Accounts by Loan Status", fontsize=
 ax.legend()
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/18-Distribution_of_Number_Of_Open_Accounts_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/17-Distribution_of_Number_Of_Open_Accounts_By_Loan_Status.png')
 
 plt.close("all")
 
@@ -503,7 +531,7 @@ ax.set_title("Distribution of Revolving Line Utilization Rate by Loan Status", f
 ax.legend()
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/19-Distribution_of_Revolving_Line_Utilization_Rate_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/18-Distribution_of_Revolving_Line_Utilization_Rate_By_Loan_Status.png')
 
 plt.close("all")
 
@@ -522,15 +550,13 @@ ax.set_title("Distribution of Revolving Balance by Loan Status", fontsize=fontsi
 ax.legend()
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/20-Distribution_of_Revolving_Balance_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/19-Distribution_of_Revolving_Balance_By_Loan_Status.png')
 
 plt.close("all")
 
-pub_rec_order = sorted(loans_data['pub_rec'].unique())
-
 logger.log("Plotting Distribution_of_Number_of_Public_Records_By_Loan_Status")
+pub_rec_order = sorted(loans_data['pub_rec'].unique())
 fig, ax = plt.subplots(figsize=[10, 10/1.62])
-
 sns.countplot(data=loans_data, x='pub_rec', hue='loan_status', ax=ax, order=pub_rec_order)
 ax.set_xlabel(descriptions.loc['pub_rec']['full_name'], fontsize=fontsize)
 ax.set_ylabel('Counts', fontsize=fontsize)
@@ -538,15 +564,13 @@ ax.set_title('Loaner Number of Public Records Distribution by Loan Status', font
 ax.legend(title=descriptions.loc['loan_status']['full_name'])
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/21-Distribution_of_Number_of_Public_Records_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/20-Distribution_of_Number_of_Public_Records_By_Loan_Status.png')
 
 plt.close("all")
 
-initial_list_status_order = sorted(loans_data['initial_list_status'].unique())
-
 logger.log("Plotting Distribution_of_Initial_Listing_Status_By_Loan_Status")
+initial_list_status_order = sorted(loans_data['initial_list_status'].unique())
 fig, ax = plt.subplots(figsize=[10, 10/1.62])
-
 sns.countplot(data=loans_data, x='initial_list_status', hue='loan_status', ax=ax, order=initial_list_status_order)
 ax.set_xlabel(descriptions.loc['initial_list_status']['full_name'], fontsize=fontsize)
 ax.set_ylabel('Counts', fontsize=fontsize)
@@ -554,15 +578,13 @@ ax.set_title('Loaner Initial Listing Status Distribution by Loan Status', fontsi
 ax.legend(title=descriptions.loc['loan_status']['full_name'])
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/22-Distribution_of_Initial_Listing_Status_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/21-Distribution_of_Initial_Listing_Status_By_Loan_Status.png')
 
 plt.close("all")
 
-application_type_order = sorted(loans_data['application_type'].unique())
-
 logger.log("Plotting Distribution_of_Application_Type_By_Loan_Status")
+application_type_order = sorted(loans_data['application_type'].unique())
 fig, ax = plt.subplots(figsize=[10, 10/1.62])
-
 sns.countplot(data=loans_data, x='application_type', hue='loan_status', ax=ax, order=application_type_order)
 ax.set_xlabel(descriptions.loc['application_type']['full_name'], fontsize=fontsize)
 ax.set_ylabel('Counts', fontsize=fontsize)
@@ -570,13 +592,12 @@ ax.set_title('Loan Application Type Distribution by Loan Status', fontsize=fonts
 ax.legend(title=descriptions.loc['loan_status']['full_name'])
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/23-Distribution_of_Application_Type_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/22-Distribution_of_Application_Type_By_Loan_Status.png')
 
 plt.close("all")
 
-pub_rec_bankruptcies_order = sorted(loans_data['pub_rec_bankruptcies'].unique())
-
 logger.log("Plotting Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status")
+pub_rec_bankruptcies_order = sorted(loans_data['pub_rec_bankruptcies'].unique())
 fig, ax = plt.subplots(figsize=[10, 10/1.62])
 
 sns.countplot(data=loans_data, x='pub_rec_bankruptcies', hue='loan_status', ax=ax, order=pub_rec_bankruptcies_order)
@@ -586,7 +607,7 @@ ax.set_title('Loaner Number of Public Record Bankruptcies by Loan Status', fonts
 ax.legend(title=descriptions.loc['loan_status']['full_name'])
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/25-Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/23-Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status.png')
 
 plt.close("all")
 
@@ -612,7 +633,7 @@ ax.set_ylabel('Numerical Features')
 
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/26-Correlation_Between_Loan_Status_And_Numerical_Features.png')
+fig.savefig(f'{out_dir_figures}/24-Correlation_Between_Loan_Status_And_Numerical_Features.png')
 
 plt.close("all")
 
@@ -626,7 +647,9 @@ title = "# Automated Exploratory Data Analysis Report"
 
 author = "Andre Guimaraes"
 
-markdown_string += f'{title}\nRun Tag: {tag}\nAuthor: {author}\n'
+datetime_string = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+markdown_string += f'{title}\nRun Tag: {tag}\nAuthor: {author}\n{datetime_string}\n'
 
 tables = sorted([f for f in os.listdir(f'outputs/{tag}/stats/') if f.endswith('.csv')])
 
