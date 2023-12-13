@@ -103,3 +103,909 @@
 2023-12-13 11:04:15: Dropping column hardship_start_date
 2023-12-13 11:04:18: Dropping column issue_d
 2023-12-13 11:04:20: Dropping column last_credit_pull_d
+2023-12-13 11:04:23: Dropping column last_pymnt_d
+2023-12-13 11:04:25: Dropping column next_pymnt_d
+2023-12-13 11:04:28: Dropping column payment_plan_start_date
+2023-12-13 11:04:30: Dropping column sec_app_earliest_cr_line
+2023-12-13 11:04:33: Dropping column settlement_date
+2023-12-13 11:04:35: Dropping column debt_settlement_flag_date_dt
+2023-12-13 11:04:38: Dropping column earliest_cr_line_dt
+2023-12-13 11:04:40: Dropping column hardship_end_date_dt
+2023-12-13 11:04:43: Dropping column hardship_start_date_dt
+2023-12-13 11:04:45: Dropping column issue_d_dt
+2023-12-13 11:04:47: Dropping column last_credit_pull_d_dt
+2023-12-13 11:04:50: Dropping column last_pymnt_d_dt
+2023-12-13 11:04:52: Dropping column next_pymnt_d_dt
+2023-12-13 11:04:55: Dropping column payment_plan_start_date_dt
+2023-12-13 11:04:57: Dropping column sec_app_earliest_cr_line_dt
+2023-12-13 11:05:00: Dropping column settlement_date_dt
+2023-12-13 11:05:03: Filling NaNs on some columns
+2023-12-13 11:05:03: Filling NaNs in column tot_coll_amt with -1
+2023-12-13 11:05:03: Filling NaNs in column tot_cur_bal with -1
+2023-12-13 11:05:03: Filling NaNs in column all_util with -1
+2023-12-13 11:05:03: Filling NaNs in column annual_inc_joint with -1
+2023-12-13 11:05:03: Filling NaNs in column bc_open_to_buy with -1
+2023-12-13 11:05:03: Filling NaNs in column deferral_term with -1
+2023-12-13 11:05:03: Filling NaNs in column collection_recovery_fee with -1
+2023-12-13 11:05:03: Filling NaNs in column hardship_last_payment_amount with -1
+2023-12-13 11:05:03: Filling NaNs in column hardship_payoff_balance_amount with -1
+2023-12-13 11:05:03: Filling NaNs in column max_bal_bc with -1
+2023-12-13 11:05:03: Filling NaNs in column mo_sin_old_il_acct with -1
+2023-12-13 11:05:03: Filling NaNs in column mo_sin_old_rev_tl_op with -1
+2023-12-13 11:05:03: Filling NaNs in column mo_sin_rcnt_rev_tl_op with -1
+2023-12-13 11:05:03: Filling NaNs in column mo_sin_rcnt_tl with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_last_delinq with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_last_major_derog with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_last_record with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_rcnt_il with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_recent_bc with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_recent_bc_dlq with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_recent_inq with -1
+2023-12-13 11:05:03: Filling NaNs in column mths_since_recent_revol_delinq with -1
+2023-12-13 11:05:03: Filling NaNs in column revol_bal_joint with -1
+2023-12-13 11:05:03: Filling NaNs in column sec_app_fico_range_high with -1
+2023-12-13 11:05:03: Filling NaNs in column sec_app_fico_range_low with -1
+2023-12-13 11:05:03: Filling NaNs in column sec_app_mort_acc with -1
+2023-12-13 11:05:03: Filling NaNs in column sec_app_mths_since_last_major_derog with -1
+2023-12-13 11:05:03: Filling NaNs in column settlement_amount with -1
+2023-12-13 11:05:03: Filling NaNs in column settlement_percentage with -1
+2023-12-13 11:05:03: Filling NaNs in column settlement_term with -1
+2023-12-13 11:05:03: Filling NaNs in column zip_code with -1
+2023-12-13 11:05:03: Filling NaNs in column total_rev_hi_lim with -1
+2023-12-13 11:05:03: Filling NaNs in column tot_hi_cred_lim with -1
+2023-12-13 11:05:04: Filling NaNs in column total_bc_limit with -1
+2023-12-13 11:05:04: Filling NaNs in column total_il_high_credit_limit with -1
+2023-12-13 11:05:04: Filling NaNs in column acc_now_delinq with 0
+2023-12-13 11:05:04: Filling NaNs in column acc_open_past_24mths with 0
+2023-12-13 11:05:04: Filling NaNs in column annual_inc with 0
+2023-12-13 11:05:04: Filling NaNs in column avg_cur_bal with 0
+2023-12-13 11:05:04: Filling NaNs in column chargeoff_within_12_mths with 0
+2023-12-13 11:05:04: Filling NaNs in column collections_12_mths_ex_med with 0
+2023-12-13 11:05:04: Filling NaNs in column delinq_2yrs with 0
+2023-12-13 11:05:04: Filling NaNs in column delinq_amnt with 0
+2023-12-13 11:05:04: Filling NaNs in column hardship_amount with 0
+2023-12-13 11:05:04: Filling NaNs in column hardship_dpd with 0
+2023-12-13 11:05:04: Filling NaNs in column hardship_length with 0
+2023-12-13 11:05:04: Filling NaNs in column inq_fi with 0
+2023-12-13 11:05:04: Filling NaNs in column inq_last_12m with 0
+2023-12-13 11:05:04: Filling NaNs in column inq_last_6mths with 0
+2023-12-13 11:05:04: Filling NaNs in column mort_acc with 0
+2023-12-13 11:05:04: Filling NaNs in column num_accts_ever_120_pd with 0
+2023-12-13 11:05:04: Filling NaNs in column num_actv_bc_tl with 0
+2023-12-13 11:05:04: Filling NaNs in column num_actv_rev_tl with 0
+2023-12-13 11:05:04: Filling NaNs in column num_tl_120dpd_2m with 0
+2023-12-13 11:05:04: Filling NaNs in column open_acc_6m with 0
+2023-12-13 11:05:04: Filling NaNs in column open_act_il with 0
+2023-12-13 11:05:04: Filling NaNs in column open_il_12m with 0
+2023-12-13 11:05:04: Filling NaNs in column open_il_24m with 0
+2023-12-13 11:05:04: Filling NaNs in column open_rv_12m with 0
+2023-12-13 11:05:04: Filling NaNs in column open_rv_24m with 0
+2023-12-13 11:05:04: Filling NaNs in column orig_projected_additional_accrued_interest with 0
+2023-12-13 11:05:04: Filling NaNs in column sec_app_chargeoff_within_12_mths with 0
+2023-12-13 11:05:04: Filling NaNs in column sec_app_collections_12_mths_ex_med with 0
+2023-12-13 11:05:04: Filling NaNs in column sec_app_inq_last_6mths with 0
+2023-12-13 11:05:04: Filling NaNs in column sec_app_num_rev_accts with 0
+2023-12-13 11:05:04: Filling NaNs in column sec_app_open_acc with 0
+2023-12-13 11:05:04: Filling NaNs in column sec_app_open_act_il with 0
+2023-12-13 11:05:04: Filling NaNs in column total_bal_il with 0
+2023-12-13 11:05:04: Filling NaNs in column total_cu_tl with 0
+2023-12-13 11:05:04: Filling NaNs in column open_acc with 0
+2023-12-13 11:05:04: Filling NaNs in column pub_rec with 0
+2023-12-13 11:05:04: Filling NaNs in column total_acc with 0
+2023-12-13 11:05:04: Filling NaNs in column num_bc_sats with 0
+2023-12-13 11:05:04: Filling NaNs in column num_bc_tl with 0
+2023-12-13 11:05:04: Filling NaNs in column num_il_tl with 0
+2023-12-13 11:05:04: Filling NaNs in column num_op_rev_tl with 0
+2023-12-13 11:05:04: Filling NaNs in column num_rev_accts with 0
+2023-12-13 11:05:04: Filling NaNs in column num_rev_tl_bal_gt_0 with 0
+2023-12-13 11:05:04: Filling NaNs in column num_sats with 0
+2023-12-13 11:05:04: Filling NaNs in column num_tl_30dpd with 0
+2023-12-13 11:05:04: Filling NaNs in column num_tl_90g_dpd_24m with 0
+2023-12-13 11:05:04: Filling NaNs in column num_tl_op_past_12m with 0
+2023-12-13 11:05:04: Filling NaNs in column pub_rec_bankruptcies with 0
+2023-12-13 11:05:04: Filling NaNs in column tax_liens with 0
+2023-12-13 11:05:04: Filling NaNs in column total_bal_ex_mort with 0
+2023-12-13 11:05:05: Filling NaNs in column bc_util with 1
+2023-12-13 11:05:05: Filling NaNs in column dti with 1
+2023-12-13 11:05:05: Filling NaNs in column dti_joint with 1
+2023-12-13 11:05:05: Filling NaNs in column il_util with 1
+2023-12-13 11:05:05: Filling NaNs in column revol_util with 1
+2023-12-13 11:05:05: Filling NaNs in column sec_app_revol_util with 1
+2023-12-13 11:05:05: Filling NaNs in column debt_settlement_flag with 'N'
+2023-12-13 11:05:05: Filling NaNs in column hardship_flag with 'N'
+2023-12-13 11:05:05: Filling NaNs in column desc with an empty string
+2023-12-13 11:05:05: Filling NaNs in column emp_title with an empty string
+2023-12-13 11:05:05: Filling NaNs in column addr_state with an empty string
+2023-12-13 11:05:05: Filling NaNs in column application_type with an empty string
+2023-12-13 11:05:06: Filling NaNs in column disbursement_method with an empty string
+2023-12-13 11:05:06: Filling NaNs in column hardship_loan_status with an empty string
+2023-12-13 11:05:06: Filling NaNs in column hardship_reason with an empty string
+2023-12-13 11:05:06: Filling NaNs in column hardship_status with an empty string
+2023-12-13 11:05:06: Filling NaNs in column settlement_status with an empty string
+2023-12-13 11:05:06: Filling NaNs in column title with an empty string
+2023-12-13 11:05:06: Filling NaNs in column verification_status_joint with an empty string
+2023-12-13 11:05:06: Filling NaNs in column hardship_type with an empty string
+2023-12-13 11:05:06: Filling NaNs in column pct_tl_nvr_dlq with 100
+2023-12-13 11:05:06: Filling NaNs in column percent_bc_gt_75 with 100
+2023-12-13 11:05:06: Dropping columns: ['fico_range_high', 'fico_range_low', 'funded_amnt', 'funded_amnt_inv', 'grade']
+2023-12-13 11:05:10: Modifying Columns
+2023-12-13 11:05:12: Casting columns to Best Types
+2023-12-13 11:05:12: Converting acc_now_delinq elements from float64 to int8
+2023-12-13 11:05:13: Converting acc_open_past_24mths elements from float64 to int8
+2023-12-13 11:05:17: Converting addr_state elements from object to object
+2023-12-13 11:05:21: Converting all_util elements from float64 to int16
+2023-12-13 11:05:22: Converting annual_inc elements from float64 to float64
+2023-12-13 11:05:22: Converting annual_inc_joint elements from float64 to float64
+2023-12-13 11:05:26: Converting application_type elements from object to object
+2023-12-13 11:05:30: Converting avg_cur_bal elements from float64 to int32
+2023-12-13 11:05:31: Converting bc_open_to_buy elements from float64 to int32
+2023-12-13 11:05:31: Converting bc_util elements from float64 to float32
+2023-12-13 11:05:32: Converting chargeoff_within_12_mths elements from float64 to int8
+2023-12-13 11:05:33: Converting collection_recovery_fee elements from float64 to float32
+2023-12-13 11:05:33: Converting collections_12_mths_ex_med elements from float64 to int8
+2023-12-13 11:05:34: Converting debt_settlement_flag elements from object to bool
+2023-12-13 11:05:35: Converting debt_settlement_flag_date_unix elements from int64 to int32
+2023-12-13 11:05:36: Converting deferral_term elements from float64 to int8
+2023-12-13 11:05:36: Converting delinq_2yrs elements from float64 to int8
+2023-12-13 11:05:37: Converting delinq_amnt elements from float64 to int32
+2023-12-13 11:05:38: Converting desc elements from object to object
+2023-12-13 11:05:42: Converting disbursement_method elements from object to object
+2023-12-13 11:05:46: Converting dti elements from float64 to float32
+2023-12-13 11:05:47: Converting dti_joint elements from float64 to float32
+2023-12-13 11:05:48: Converting earliest_cr_line_unix elements from int64 to int32
+2023-12-13 11:05:48: Converting emp_length_years elements from int64 to int8
+2023-12-13 11:05:52: Converting emp_title elements from object to object
+2023-12-13 11:05:56: Converting fico_range_high elements from float64 to int16
+2023-12-13 11:05:57: Converting fico_range_low elements from float64 to int16
+2023-12-13 11:05:58: Converting funded_amnt elements from float64 to int32
+2023-12-13 11:05:59: Converting funded_amnt_inv elements from float64 to float64
+2023-12-13 11:06:02: Converting grade elements from object to object
+2023-12-13 11:06:06: Converting hardship_amount elements from float64 to float32
+2023-12-13 11:06:06: Converting hardship_dpd elements from float64 to int8
+2023-12-13 11:06:07: Converting hardship_end_date_unix elements from int64 to int32
+2023-12-13 11:06:08: Converting hardship_flag elements from object to bool
+2023-12-13 11:06:09: Converting hardship_last_payment_amount elements from float64 to float32
+2023-12-13 11:06:10: Converting hardship_length elements from float64 to int8
+2023-12-13 11:06:12: Converting hardship_loan_status elements from object to object
+2023-12-13 11:06:14: Converting hardship_payoff_balance_amount elements from float64 to float64
+2023-12-13 11:06:16: Converting hardship_reason elements from object to object
+2023-12-13 11:06:17: Converting hardship_start_date_unix elements from int64 to int32
+2023-12-13 11:06:18: Converting hardship_status elements from object to object
+2023-12-13 11:06:20: Converting hardship_type elements from object to object
+2023-12-13 11:06:24: Converting home_ownership elements from object to object
+2023-12-13 11:06:28: Converting id elements from int64 to int32
+2023-12-13 11:06:28: Converting il_util elements from float64 to int16
+2023-12-13 11:06:31: Converting initial_list_status elements from object to object
+2023-12-13 11:06:34: Converting inq_fi elements from float64 to int8
+2023-12-13 11:06:34: Converting inq_last_12m elements from float64 to int8
+2023-12-13 11:06:35: Converting inq_last_6mths elements from float64 to int8
+2023-12-13 11:06:35: Converting installment elements from float64 to float32
+2023-12-13 11:06:36: Converting int_rate elements from float64 to float32
+2023-12-13 11:06:37: Converting issue_d_unix elements from int64 to int32
+2023-12-13 11:06:37: Converting last_credit_pull_d_unix elements from int64 to int32
+2023-12-13 11:06:38: Converting last_fico_range_high elements from float64 to int16
+2023-12-13 11:06:38: Converting last_fico_range_low elements from float64 to int16
+2023-12-13 11:06:39: Converting last_pymnt_amnt elements from float64 to float64
+2023-12-13 11:06:39: Converting last_pymnt_d_unix elements from int64 to int32
+2023-12-13 11:06:40: Converting loan_amnt elements from float64 to int32
+2023-12-13 11:06:43: Converting loan_status elements from object to object
+2023-12-13 11:06:46: Converting max_bal_bc elements from float64 to int32
+2023-12-13 11:06:46: Converting mo_sin_old_il_acct elements from float64 to int16
+2023-12-13 11:06:47: Converting mo_sin_old_rev_tl_op elements from float64 to int16
+2023-12-13 11:06:47: Converting mo_sin_rcnt_rev_tl_op elements from float64 to int16
+2023-12-13 11:06:48: Converting mo_sin_rcnt_tl elements from float64 to int16
+2023-12-13 11:06:48: Converting mort_acc elements from float64 to int8
+2023-12-13 11:06:48: Converting mths_since_last_delinq elements from float64 to int16
+2023-12-13 11:06:49: Converting mths_since_last_major_derog elements from float64 to int16
+2023-12-13 11:06:49: Converting mths_since_last_record elements from float64 to int16
+2023-12-13 11:06:50: Converting mths_since_rcnt_il elements from float64 to int16
+2023-12-13 11:06:50: Converting mths_since_recent_bc elements from float64 to int16
+2023-12-13 11:06:51: Converting mths_since_recent_bc_dlq elements from float64 to int16
+2023-12-13 11:06:51: Converting mths_since_recent_inq elements from float64 to int8
+2023-12-13 11:06:51: Converting mths_since_recent_revol_delinq elements from float64 to int16
+2023-12-13 11:06:52: Converting next_pymnt_d_unix elements from int64 to int32
+2023-12-13 11:06:52: Converting num_accts_ever_120_pd elements from float64 to int8
+2023-12-13 11:06:53: Converting num_actv_bc_tl elements from float64 to int8
+2023-12-13 11:06:53: Converting num_actv_rev_tl elements from float64 to int8
+2023-12-13 11:06:53: Converting num_bc_sats elements from float64 to int8
+2023-12-13 11:06:54: Converting num_bc_tl elements from float64 to int8
+2023-12-13 11:06:54: Converting num_il_tl elements from float64 to int16
+2023-12-13 11:06:55: Converting num_op_rev_tl elements from float64 to int8
+2023-12-13 11:06:55: Converting num_rev_accts elements from float64 to int16
+2023-12-13 11:06:56: Converting num_rev_tl_bal_gt_0 elements from float64 to int8
+2023-12-13 11:06:56: Converting num_sats elements from float64 to int8
+2023-12-13 11:06:56: Converting num_tl_120dpd_2m elements from float64 to int8
+2023-12-13 11:06:57: Converting num_tl_30dpd elements from float64 to int8
+2023-12-13 11:06:57: Converting num_tl_90g_dpd_24m elements from float64 to int8
+2023-12-13 11:06:57: Converting num_tl_op_past_12m elements from float64 to int8
+2023-12-13 11:06:58: Converting open_acc elements from float64 to int8
+2023-12-13 11:06:58: Converting open_acc_6m elements from float64 to int8
+2023-12-13 11:06:59: Converting open_act_il elements from float64 to int8
+2023-12-13 11:06:59: Converting open_il_12m elements from float64 to int8
+2023-12-13 11:06:59: Converting open_il_24m elements from float64 to int8
+2023-12-13 11:07:00: Converting open_rv_12m elements from float64 to int8
+2023-12-13 11:07:00: Converting open_rv_24m elements from float64 to int8
+2023-12-13 11:07:01: Converting orig_projected_additional_accrued_interest elements from float64 to float32
+2023-12-13 11:07:02: Converting out_prncp elements from float64 to float64
+2023-12-13 11:07:02: Converting out_prncp_inv elements from float64 to float64
+2023-12-13 11:07:03: Converting payment_plan_start_date_unix elements from int64 to int32
+2023-12-13 11:07:04: Converting pct_tl_nvr_dlq elements from float64 to float32
+2023-12-13 11:07:05: Converting percent_bc_gt_75 elements from float64 to float32
+2023-12-13 11:07:05: Converting policy_code elements from float64 to bool
+2023-12-13 11:07:06: Converting pub_rec elements from float64 to int8
+2023-12-13 11:07:07: Converting pub_rec_bankruptcies elements from float64 to int8
+2023-12-13 11:07:10: Converting purpose elements from object to object
+2023-12-13 11:07:16: Converting pymnt_plan elements from object to object
+2023-12-13 11:07:19: Converting recoveries elements from float64 to float64
+2023-12-13 11:07:19: Converting revol_bal elements from float64 to int32
+2023-12-13 11:07:20: Converting revol_bal_joint elements from float64 to int32
+2023-12-13 11:07:20: Converting revol_util elements from float64 to float32
+2023-12-13 11:07:21: Converting sec_app_chargeoff_within_12_mths elements from float64 to int8
+2023-12-13 11:07:22: Converting sec_app_collections_12_mths_ex_med elements from float64 to int8
+2023-12-13 11:07:22: Converting sec_app_earliest_cr_line_unix elements from int64 to int32
+2023-12-13 11:07:23: Converting sec_app_fico_range_high elements from float64 to int16
+2023-12-13 11:07:23: Converting sec_app_fico_range_low elements from float64 to int16
+2023-12-13 11:07:24: Converting sec_app_inq_last_6mths elements from float64 to int8
+2023-12-13 11:07:24: Converting sec_app_mort_acc elements from float64 to int8
+2023-12-13 11:07:25: Converting sec_app_mths_since_last_major_derog elements from float64 to int16
+2023-12-13 11:07:25: Converting sec_app_num_rev_accts elements from float64 to int8
+2023-12-13 11:07:26: Converting sec_app_open_acc elements from float64 to int8
+2023-12-13 11:07:26: Converting sec_app_open_act_il elements from float64 to int8
+2023-12-13 11:07:27: Converting sec_app_revol_util elements from float64 to float32
+2023-12-13 11:07:28: Converting settlement_amount elements from float64 to float64
+2023-12-13 11:07:30: Converting settlement_date_unix elements from int64 to int32
+2023-12-13 11:07:31: Converting settlement_percentage elements from float64 to float32
+2023-12-13 11:07:33: Converting settlement_status elements from object to object
+2023-12-13 11:07:34: Converting settlement_term elements from float64 to int16
+2023-12-13 11:07:39: Converting sub_grade elements from object to object
+2023-12-13 11:07:43: Converting tax_liens elements from float64 to int8
+2023-12-13 11:07:43: Converting term_months elements from int64 to int8
+2023-12-13 11:07:46: Converting title elements from object to object
+2023-12-13 11:07:49: Converting tot_coll_amt elements from float64 to int32
+2023-12-13 11:07:50: Converting tot_cur_bal elements from float64 to int32
+2023-12-13 11:07:50: Converting tot_hi_cred_lim elements from float64 to int32
+2023-12-13 11:07:51: Converting total_acc elements from float64 to int16
+2023-12-13 11:07:52: Converting total_bal_ex_mort elements from float64 to int32
+2023-12-13 11:07:52: Converting total_bal_il elements from float64 to int32
+2023-12-13 11:07:53: Converting total_bc_limit elements from float64 to int32
+2023-12-13 11:07:53: Converting total_cu_tl elements from float64 to int8
+2023-12-13 11:07:54: Converting total_il_high_credit_limit elements from float64 to int32
+2023-12-13 11:07:55: Converting total_pymnt elements from float64 to float64
+2023-12-13 11:07:55: Converting total_pymnt_inv elements from float64 to float64
+2023-12-13 11:07:56: Converting total_rec_int elements from float64 to float64
+2023-12-13 11:07:57: Converting total_rec_late_fee elements from float64 to float32
+2023-12-13 11:07:58: Converting total_rec_prncp elements from float64 to float64
+2023-12-13 11:07:58: Converting total_rev_hi_lim elements from float64 to int32
+2023-12-13 11:08:02: Converting url elements from object to object
+2023-12-13 11:08:09: Converting verification_status elements from object to object
+2023-12-13 11:08:13: Converting verification_status_joint elements from object to object
+2023-12-13 11:08:17: Converting zip_code elements from object to int16
+2023-12-13 11:08:21: Creating Metadata Dataframe
+2023-12-13 11:08:21: Creating Descriptions Dataframe
+2023-12-13 11:09:48: ----------------------Logger Initialized for csv_to_sqlite.py----------------------
+2023-12-13 11:09:48: Reading Columns Full Names
+2023-12-13 11:09:48: Reading Columns Descriptions
+2023-12-13 11:09:48: Loading data CSV
+2023-12-13 11:11:28: Loading Metadata
+2023-12-13 11:11:28: Finding Date Columns
+2023-12-13 11:11:39: Creating UNIX Timestamp Columns for Dates
+2023-12-13 11:11:39: Converting column debt_settlement_flag_date to UNIX time
+2023-12-13 11:11:40: Converting column earliest_cr_line to UNIX time
+2023-12-13 11:11:40: Converting column hardship_end_date to UNIX time
+2023-12-13 11:11:40: Converting column hardship_start_date to UNIX time
+2023-12-13 11:11:40: Converting column issue_d to UNIX time
+2023-12-13 11:11:40: Converting column last_credit_pull_d to UNIX time
+2023-12-13 11:11:40: Converting column last_pymnt_d to UNIX time
+2023-12-13 11:11:41: Converting column next_pymnt_d to UNIX time
+2023-12-13 11:11:41: Converting column payment_plan_start_date to UNIX time
+2023-12-13 11:11:41: Converting column sec_app_earliest_cr_line to UNIX time
+2023-12-13 11:11:41: Converting column settlement_date to UNIX time
+2023-12-13 11:11:41: Creating interesting columns
+2023-12-13 11:11:43: Dropping uninteresting columns
+2023-12-13 11:11:43: Dropping column member_id
+2023-12-13 11:11:46: Dropping column term
+2023-12-13 11:11:48: Dropping column emp_length
+2023-12-13 11:11:51: Dropping column debt_settlement_flag_date
+2023-12-13 11:11:53: Dropping column earliest_cr_line
+2023-12-13 11:11:56: Dropping column hardship_end_date
+2023-12-13 11:11:58: Dropping column hardship_start_date
+2023-12-13 11:12:01: Dropping column issue_d
+2023-12-13 11:12:03: Dropping column last_credit_pull_d
+2023-12-13 11:12:06: Dropping column last_pymnt_d
+2023-12-13 11:12:08: Dropping column next_pymnt_d
+2023-12-13 11:12:11: Dropping column payment_plan_start_date
+2023-12-13 11:12:13: Dropping column sec_app_earliest_cr_line
+2023-12-13 11:12:15: Dropping column settlement_date
+2023-12-13 11:12:17: Dropping column debt_settlement_flag_date_dt
+2023-12-13 11:12:20: Dropping column earliest_cr_line_dt
+2023-12-13 11:12:22: Dropping column hardship_end_date_dt
+2023-12-13 11:12:24: Dropping column hardship_start_date_dt
+2023-12-13 11:12:26: Dropping column issue_d_dt
+2023-12-13 11:12:28: Dropping column last_credit_pull_d_dt
+2023-12-13 11:12:31: Dropping column last_pymnt_d_dt
+2023-12-13 11:12:33: Dropping column next_pymnt_d_dt
+2023-12-13 11:12:35: Dropping column payment_plan_start_date_dt
+2023-12-13 11:12:37: Dropping column sec_app_earliest_cr_line_dt
+2023-12-13 11:12:39: Dropping column settlement_date_dt
+2023-12-13 11:12:41: Filling NaNs on some columns
+2023-12-13 11:12:41: Filling NaNs in column tot_coll_amt with -1
+2023-12-13 11:12:41: Filling NaNs in column tot_cur_bal with -1
+2023-12-13 11:12:41: Filling NaNs in column all_util with -1
+2023-12-13 11:12:41: Filling NaNs in column annual_inc_joint with -1
+2023-12-13 11:12:41: Filling NaNs in column bc_open_to_buy with -1
+2023-12-13 11:12:41: Filling NaNs in column deferral_term with -1
+2023-12-13 11:12:41: Filling NaNs in column collection_recovery_fee with -1
+2023-12-13 11:12:41: Filling NaNs in column hardship_last_payment_amount with -1
+2023-12-13 11:12:41: Filling NaNs in column hardship_payoff_balance_amount with -1
+2023-12-13 11:12:41: Filling NaNs in column max_bal_bc with -1
+2023-12-13 11:12:41: Filling NaNs in column mo_sin_old_il_acct with -1
+2023-12-13 11:12:41: Filling NaNs in column mo_sin_old_rev_tl_op with -1
+2023-12-13 11:12:41: Filling NaNs in column mo_sin_rcnt_rev_tl_op with -1
+2023-12-13 11:12:41: Filling NaNs in column mo_sin_rcnt_tl with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_last_delinq with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_last_major_derog with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_last_record with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_rcnt_il with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_recent_bc with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_recent_bc_dlq with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_recent_inq with -1
+2023-12-13 11:12:41: Filling NaNs in column mths_since_recent_revol_delinq with -1
+2023-12-13 11:12:41: Filling NaNs in column revol_bal_joint with -1
+2023-12-13 11:12:41: Filling NaNs in column sec_app_fico_range_high with -1
+2023-12-13 11:12:41: Filling NaNs in column sec_app_fico_range_low with -1
+2023-12-13 11:12:41: Filling NaNs in column sec_app_mort_acc with -1
+2023-12-13 11:12:41: Filling NaNs in column sec_app_mths_since_last_major_derog with -1
+2023-12-13 11:12:41: Filling NaNs in column settlement_amount with -1
+2023-12-13 11:12:41: Filling NaNs in column settlement_percentage with -1
+2023-12-13 11:12:41: Filling NaNs in column settlement_term with -1
+2023-12-13 11:12:41: Filling NaNs in column zip_code with -1
+2023-12-13 11:12:41: Filling NaNs in column total_rev_hi_lim with -1
+2023-12-13 11:12:41: Filling NaNs in column tot_hi_cred_lim with -1
+2023-12-13 11:12:41: Filling NaNs in column total_bc_limit with -1
+2023-12-13 11:12:41: Filling NaNs in column total_il_high_credit_limit with -1
+2023-12-13 11:12:41: Filling NaNs in column acc_now_delinq with 0
+2023-12-13 11:12:42: Filling NaNs in column acc_open_past_24mths with 0
+2023-12-13 11:12:42: Filling NaNs in column annual_inc with 0
+2023-12-13 11:12:42: Filling NaNs in column avg_cur_bal with 0
+2023-12-13 11:12:42: Filling NaNs in column chargeoff_within_12_mths with 0
+2023-12-13 11:12:42: Filling NaNs in column collections_12_mths_ex_med with 0
+2023-12-13 11:12:42: Filling NaNs in column delinq_2yrs with 0
+2023-12-13 11:12:42: Filling NaNs in column delinq_amnt with 0
+2023-12-13 11:12:42: Filling NaNs in column hardship_amount with 0
+2023-12-13 11:12:42: Filling NaNs in column hardship_dpd with 0
+2023-12-13 11:12:42: Filling NaNs in column hardship_length with 0
+2023-12-13 11:12:42: Filling NaNs in column inq_fi with 0
+2023-12-13 11:12:42: Filling NaNs in column inq_last_12m with 0
+2023-12-13 11:12:42: Filling NaNs in column inq_last_6mths with 0
+2023-12-13 11:12:42: Filling NaNs in column mort_acc with 0
+2023-12-13 11:12:42: Filling NaNs in column num_accts_ever_120_pd with 0
+2023-12-13 11:12:42: Filling NaNs in column num_actv_bc_tl with 0
+2023-12-13 11:12:42: Filling NaNs in column num_actv_rev_tl with 0
+2023-12-13 11:12:42: Filling NaNs in column num_tl_120dpd_2m with 0
+2023-12-13 11:12:42: Filling NaNs in column open_acc_6m with 0
+2023-12-13 11:12:42: Filling NaNs in column open_act_il with 0
+2023-12-13 11:12:42: Filling NaNs in column open_il_12m with 0
+2023-12-13 11:12:42: Filling NaNs in column open_il_24m with 0
+2023-12-13 11:12:42: Filling NaNs in column open_rv_12m with 0
+2023-12-13 11:12:42: Filling NaNs in column open_rv_24m with 0
+2023-12-13 11:12:42: Filling NaNs in column orig_projected_additional_accrued_interest with 0
+2023-12-13 11:12:42: Filling NaNs in column sec_app_chargeoff_within_12_mths with 0
+2023-12-13 11:12:42: Filling NaNs in column sec_app_collections_12_mths_ex_med with 0
+2023-12-13 11:12:42: Filling NaNs in column sec_app_inq_last_6mths with 0
+2023-12-13 11:12:42: Filling NaNs in column sec_app_num_rev_accts with 0
+2023-12-13 11:12:42: Filling NaNs in column sec_app_open_acc with 0
+2023-12-13 11:12:42: Filling NaNs in column sec_app_open_act_il with 0
+2023-12-13 11:12:42: Filling NaNs in column total_bal_il with 0
+2023-12-13 11:12:42: Filling NaNs in column total_cu_tl with 0
+2023-12-13 11:12:42: Filling NaNs in column open_acc with 0
+2023-12-13 11:12:42: Filling NaNs in column pub_rec with 0
+2023-12-13 11:12:42: Filling NaNs in column total_acc with 0
+2023-12-13 11:12:42: Filling NaNs in column num_bc_sats with 0
+2023-12-13 11:12:42: Filling NaNs in column num_bc_tl with 0
+2023-12-13 11:12:42: Filling NaNs in column num_il_tl with 0
+2023-12-13 11:12:42: Filling NaNs in column num_op_rev_tl with 0
+2023-12-13 11:12:42: Filling NaNs in column num_rev_accts with 0
+2023-12-13 11:12:42: Filling NaNs in column num_rev_tl_bal_gt_0 with 0
+2023-12-13 11:12:42: Filling NaNs in column num_sats with 0
+2023-12-13 11:12:42: Filling NaNs in column num_tl_30dpd with 0
+2023-12-13 11:12:42: Filling NaNs in column num_tl_90g_dpd_24m with 0
+2023-12-13 11:12:42: Filling NaNs in column num_tl_op_past_12m with 0
+2023-12-13 11:12:42: Filling NaNs in column pub_rec_bankruptcies with 0
+2023-12-13 11:12:42: Filling NaNs in column tax_liens with 0
+2023-12-13 11:12:42: Filling NaNs in column total_bal_ex_mort with 0
+2023-12-13 11:12:42: Filling NaNs in column bc_util with 1
+2023-12-13 11:12:42: Filling NaNs in column dti with 1
+2023-12-13 11:12:42: Filling NaNs in column dti_joint with 1
+2023-12-13 11:12:42: Filling NaNs in column il_util with 1
+2023-12-13 11:12:42: Filling NaNs in column revol_util with 1
+2023-12-13 11:12:42: Filling NaNs in column sec_app_revol_util with 1
+2023-12-13 11:12:42: Filling NaNs in column debt_settlement_flag with 'N'
+2023-12-13 11:12:42: Filling NaNs in column hardship_flag with 'N'
+2023-12-13 11:12:42: Filling NaNs in column desc with an empty string
+2023-12-13 11:12:42: Filling NaNs in column emp_title with an empty string
+2023-12-13 11:12:43: Filling NaNs in column addr_state with an empty string
+2023-12-13 11:12:43: Filling NaNs in column application_type with an empty string
+2023-12-13 11:12:43: Filling NaNs in column disbursement_method with an empty string
+2023-12-13 11:12:43: Filling NaNs in column hardship_loan_status with an empty string
+2023-12-13 11:12:43: Filling NaNs in column hardship_reason with an empty string
+2023-12-13 11:12:43: Filling NaNs in column hardship_status with an empty string
+2023-12-13 11:12:43: Filling NaNs in column settlement_status with an empty string
+2023-12-13 11:12:43: Filling NaNs in column title with an empty string
+2023-12-13 11:12:43: Filling NaNs in column verification_status_joint with an empty string
+2023-12-13 11:12:43: Filling NaNs in column hardship_type with an empty string
+2023-12-13 11:12:43: Filling NaNs in column pct_tl_nvr_dlq with 100
+2023-12-13 11:12:44: Filling NaNs in column percent_bc_gt_75 with 100
+2023-12-13 11:12:44: Dropping columns: ['fico_range_high', 'fico_range_low', 'funded_amnt', 'funded_amnt_inv', 'grade']
+2023-12-13 11:12:46: Modifying Columns
+2023-12-13 11:12:48: Casting columns to Best Types
+2023-12-13 11:12:48: Converting acc_now_delinq elements from float64 to int8
+2023-12-13 11:12:48: Converting acc_open_past_24mths elements from float64 to int8
+2023-12-13 11:12:51: Converting addr_state elements from object to object
+2023-12-13 11:12:54: Converting all_util elements from float64 to int16
+2023-12-13 11:12:55: Converting annual_inc elements from float64 to float64
+2023-12-13 11:12:55: Converting annual_inc_joint elements from float64 to float64
+2023-12-13 11:12:58: Converting application_type elements from object to object
+2023-12-13 11:13:01: Converting avg_cur_bal elements from float64 to int32
+2023-12-13 11:13:02: Converting bc_open_to_buy elements from float64 to int32
+2023-12-13 11:13:02: Converting bc_util elements from float64 to float32
+2023-12-13 11:13:03: Converting chargeoff_within_12_mths elements from float64 to int8
+2023-12-13 11:13:03: Converting collection_recovery_fee elements from float64 to float32
+2023-12-13 11:13:04: Converting collections_12_mths_ex_med elements from float64 to int8
+2023-12-13 11:13:05: Converting debt_settlement_flag elements from object to bool
+2023-12-13 11:13:06: Converting debt_settlement_flag_date_unix elements from int64 to int32
+2023-12-13 11:13:06: Converting deferral_term elements from float64 to int8
+2023-12-13 11:13:07: Converting delinq_2yrs elements from float64 to int8
+2023-12-13 11:13:07: Converting delinq_amnt elements from float64 to int32
+2023-12-13 11:13:08: Converting desc elements from object to object
+2023-12-13 11:13:11: Converting disbursement_method elements from object to object
+2023-12-13 11:13:15: Converting dti elements from float64 to float32
+2023-12-13 11:13:15: Converting dti_joint elements from float64 to float32
+2023-12-13 11:13:16: Converting earliest_cr_line_unix elements from int64 to int32
+2023-12-13 11:13:16: Converting emp_length_years elements from int64 to int8
+2023-12-13 11:13:19: Converting emp_title elements from object to object
+2023-12-13 11:13:22: Converting fico_range_high elements from float64 to int16
+2023-12-13 11:13:22: Converting fico_range_low elements from float64 to int16
+2023-12-13 11:13:23: Converting funded_amnt elements from float64 to int32
+2023-12-13 11:13:24: Converting funded_amnt_inv elements from float64 to float64
+2023-12-13 11:13:27: Converting grade elements from object to object
+2023-12-13 11:13:29: Converting hardship_amount elements from float64 to float32
+2023-12-13 11:13:30: Converting hardship_dpd elements from float64 to int8
+2023-12-13 11:13:30: Converting hardship_end_date_unix elements from int64 to int32
+2023-12-13 11:13:31: Converting hardship_flag elements from object to bool
+2023-12-13 11:13:32: Converting hardship_last_payment_amount elements from float64 to float32
+2023-12-13 11:13:33: Converting hardship_length elements from float64 to int8
+2023-12-13 11:13:33: Converting hardship_loan_status elements from object to object
+2023-12-13 11:13:34: Converting hardship_payoff_balance_amount elements from float64 to float64
+2023-12-13 11:13:35: Converting hardship_reason elements from object to object
+2023-12-13 11:13:36: Converting hardship_start_date_unix elements from int64 to int32
+2023-12-13 11:13:37: Converting hardship_status elements from object to object
+2023-12-13 11:13:38: Converting hardship_type elements from object to object
+2023-12-13 11:13:41: Converting home_ownership elements from object to object
+2023-12-13 11:13:44: Converting id elements from int64 to int32
+2023-12-13 11:13:44: Converting il_util elements from float64 to int16
+2023-12-13 11:13:47: Converting initial_list_status elements from object to object
+2023-12-13 11:13:50: Converting inq_fi elements from float64 to int8
+2023-12-13 11:13:50: Converting inq_last_12m elements from float64 to int8
+2023-12-13 11:13:51: Converting inq_last_6mths elements from float64 to int8
+2023-12-13 11:13:51: Converting installment elements from float64 to float32
+2023-12-13 11:13:52: Converting int_rate elements from float64 to float32
+2023-12-13 11:13:53: Converting issue_d_unix elements from int64 to int32
+2023-12-13 11:13:53: Converting last_credit_pull_d_unix elements from int64 to int32
+2023-12-13 11:13:54: Converting last_fico_range_high elements from float64 to int16
+2023-12-13 11:13:54: Converting last_fico_range_low elements from float64 to int16
+2023-12-13 11:13:55: Converting last_pymnt_amnt elements from float64 to float64
+2023-12-13 11:13:55: Converting last_pymnt_d_unix elements from int64 to int32
+2023-12-13 11:13:56: Converting loan_amnt elements from float64 to int32
+2023-12-13 11:13:59: Converting loan_status elements from object to object
+2023-12-13 11:14:02: Converting max_bal_bc elements from float64 to int32
+2023-12-13 11:14:02: Converting mo_sin_old_il_acct elements from float64 to int16
+2023-12-13 11:14:03: Converting mo_sin_old_rev_tl_op elements from float64 to int16
+2023-12-13 11:14:03: Converting mo_sin_rcnt_rev_tl_op elements from float64 to int16
+2023-12-13 11:14:04: Converting mo_sin_rcnt_tl elements from float64 to int16
+2023-12-13 11:14:04: Converting mort_acc elements from float64 to int8
+2023-12-13 11:14:05: Converting mths_since_last_delinq elements from float64 to int16
+2023-12-13 11:14:05: Converting mths_since_last_major_derog elements from float64 to int16
+2023-12-13 11:14:06: Converting mths_since_last_record elements from float64 to int16
+2023-12-13 11:14:06: Converting mths_since_rcnt_il elements from float64 to int16
+2023-12-13 11:14:07: Converting mths_since_recent_bc elements from float64 to int16
+2023-12-13 11:14:07: Converting mths_since_recent_bc_dlq elements from float64 to int16
+2023-12-13 11:14:08: Converting mths_since_recent_inq elements from float64 to int8
+2023-12-13 11:14:08: Converting mths_since_recent_revol_delinq elements from float64 to int16
+2023-12-13 11:14:08: Converting next_pymnt_d_unix elements from int64 to int32
+2023-12-13 11:14:09: Converting num_accts_ever_120_pd elements from float64 to int8
+2023-12-13 11:14:09: Converting num_actv_bc_tl elements from float64 to int8
+2023-12-13 11:14:10: Converting num_actv_rev_tl elements from float64 to int8
+2023-12-13 11:14:10: Converting num_bc_sats elements from float64 to int8
+2023-12-13 11:14:11: Converting num_bc_tl elements from float64 to int8
+2023-12-13 11:14:11: Converting num_il_tl elements from float64 to int16
+2023-12-13 11:14:11: Converting num_op_rev_tl elements from float64 to int8
+2023-12-13 11:14:12: Converting num_rev_accts elements from float64 to int16
+2023-12-13 11:14:12: Converting num_rev_tl_bal_gt_0 elements from float64 to int8
+2023-12-13 11:14:13: Converting num_sats elements from float64 to int8
+2023-12-13 11:14:13: Converting num_tl_120dpd_2m elements from float64 to int8
+2023-12-13 11:14:14: Converting num_tl_30dpd elements from float64 to int8
+2023-12-13 11:14:14: Converting num_tl_90g_dpd_24m elements from float64 to int8
+2023-12-13 11:14:14: Converting num_tl_op_past_12m elements from float64 to int8
+2023-12-13 11:14:15: Converting open_acc elements from float64 to int8
+2023-12-13 11:14:15: Converting open_acc_6m elements from float64 to int8
+2023-12-13 11:14:16: Converting open_act_il elements from float64 to int8
+2023-12-13 11:14:16: Converting open_il_12m elements from float64 to int8
+2023-12-13 11:14:17: Converting open_il_24m elements from float64 to int8
+2023-12-13 11:14:17: Converting open_rv_12m elements from float64 to int8
+2023-12-13 11:14:17: Converting open_rv_24m elements from float64 to int8
+2023-12-13 11:14:18: Converting orig_projected_additional_accrued_interest elements from float64 to float32
+2023-12-13 11:14:19: Converting out_prncp elements from float64 to float64
+2023-12-13 11:14:19: Converting out_prncp_inv elements from float64 to float64
+2023-12-13 11:14:20: Converting payment_plan_start_date_unix elements from int64 to int32
+2023-12-13 11:14:20: Converting pct_tl_nvr_dlq elements from float64 to float32
+2023-12-13 11:14:21: Converting percent_bc_gt_75 elements from float64 to float32
+2023-12-13 11:14:22: Converting policy_code elements from float64 to bool
+2023-12-13 11:14:22: Converting pub_rec elements from float64 to int8
+2023-12-13 11:14:23: Converting pub_rec_bankruptcies elements from float64 to int8
+2023-12-13 11:14:26: Converting purpose elements from object to object
+2023-12-13 11:14:31: Converting pymnt_plan elements from object to object
+2023-12-13 11:14:34: Converting recoveries elements from float64 to float64
+2023-12-13 11:14:35: Converting revol_bal elements from float64 to int32
+2023-12-13 11:14:35: Converting revol_bal_joint elements from float64 to int32
+2023-12-13 11:14:36: Converting revol_util elements from float64 to float32
+2023-12-13 11:14:36: Converting sec_app_chargeoff_within_12_mths elements from float64 to int8
+2023-12-13 11:14:37: Converting sec_app_collections_12_mths_ex_med elements from float64 to int8
+2023-12-13 11:14:37: Converting sec_app_earliest_cr_line_unix elements from int64 to int32
+2023-12-13 11:14:38: Converting sec_app_fico_range_high elements from float64 to int16
+2023-12-13 11:14:38: Converting sec_app_fico_range_low elements from float64 to int16
+2023-12-13 11:14:39: Converting sec_app_inq_last_6mths elements from float64 to int8
+2023-12-13 11:14:39: Converting sec_app_mort_acc elements from float64 to int8
+2023-12-13 11:14:40: Converting sec_app_mths_since_last_major_derog elements from float64 to int16
+2023-12-13 11:14:40: Converting sec_app_num_rev_accts elements from float64 to int8
+2023-12-13 11:14:41: Converting sec_app_open_acc elements from float64 to int8
+2023-12-13 11:14:41: Converting sec_app_open_act_il elements from float64 to int8
+2023-12-13 11:14:42: Converting sec_app_revol_util elements from float64 to float32
+2023-12-13 11:14:43: Converting settlement_amount elements from float64 to float64
+2023-12-13 11:14:44: Converting settlement_date_unix elements from int64 to int32
+2023-12-13 11:14:44: Converting settlement_percentage elements from float64 to float32
+2023-12-13 11:14:46: Converting settlement_status elements from object to object
+2023-12-13 11:14:47: Converting settlement_term elements from float64 to int16
+2023-12-13 11:14:52: Converting sub_grade elements from object to object
+2023-12-13 11:14:55: Converting tax_liens elements from float64 to int8
+2023-12-13 11:14:56: Converting term_months elements from int64 to int8
+2023-12-13 11:14:59: Converting title elements from object to object
+2023-12-13 11:15:03: Converting tot_coll_amt elements from float64 to int32
+2023-12-13 11:15:03: Converting tot_cur_bal elements from float64 to int32
+2023-12-13 11:15:04: Converting tot_hi_cred_lim elements from float64 to int32
+2023-12-13 11:15:04: Converting total_acc elements from float64 to int16
+2023-12-13 11:15:05: Converting total_bal_ex_mort elements from float64 to int32
+2023-12-13 11:15:05: Converting total_bal_il elements from float64 to int32
+2023-12-13 11:15:06: Converting total_bc_limit elements from float64 to int32
+2023-12-13 11:15:07: Converting total_cu_tl elements from float64 to int8
+2023-12-13 11:15:07: Converting total_il_high_credit_limit elements from float64 to int32
+2023-12-13 11:15:08: Converting total_pymnt elements from float64 to float64
+2023-12-13 11:15:08: Converting total_pymnt_inv elements from float64 to float64
+2023-12-13 11:15:09: Converting total_rec_int elements from float64 to float64
+2023-12-13 11:15:10: Converting total_rec_late_fee elements from float64 to float32
+2023-12-13 11:15:11: Converting total_rec_prncp elements from float64 to float64
+2023-12-13 11:15:11: Converting total_rev_hi_lim elements from float64 to int32
+2023-12-13 11:15:14: Converting url elements from object to object
+2023-12-13 11:15:20: Converting verification_status elements from object to object
+2023-12-13 11:15:23: Converting verification_status_joint elements from object to object
+2023-12-13 11:15:27: Converting zip_code elements from object to int16
+2023-12-13 11:15:30: Creating Metadata Dataframe
+2023-12-13 11:15:31: Creating Descriptions Dataframe
+2023-12-13 11:15:31: Connecting to Database
+2023-12-13 11:15:31: Creating Queries
+2023-12-13 11:30:52: ----------------------Logger Initialized for csv_to_sqlite.py----------------------
+2023-12-13 11:30:52: Reading Columns Full Names
+2023-12-13 11:30:52: Reading Columns Descriptions
+2023-12-13 11:30:52: Loading data CSV
+2023-12-13 11:32:17: Loading Metadata
+2023-12-13 11:32:17: Finding Date Columns
+2023-12-13 11:32:28: Creating UNIX Timestamp Columns for Dates
+2023-12-13 11:32:28: Converting column debt_settlement_flag_date to UNIX time
+2023-12-13 11:32:28: Converting column earliest_cr_line to UNIX time
+2023-12-13 11:32:28: Converting column hardship_end_date to UNIX time
+2023-12-13 11:32:29: Converting column hardship_start_date to UNIX time
+2023-12-13 11:32:29: Converting column issue_d to UNIX time
+2023-12-13 11:32:29: Converting column last_credit_pull_d to UNIX time
+2023-12-13 11:32:29: Converting column last_pymnt_d to UNIX time
+2023-12-13 11:32:29: Converting column next_pymnt_d to UNIX time
+2023-12-13 11:32:29: Converting column payment_plan_start_date to UNIX time
+2023-12-13 11:32:30: Converting column sec_app_earliest_cr_line to UNIX time
+2023-12-13 11:32:30: Converting column settlement_date to UNIX time
+2023-12-13 11:32:30: Creating interesting columns
+2023-12-13 11:32:32: Dropping uninteresting columns
+2023-12-13 11:32:32: Dropping column member_id
+2023-12-13 11:32:34: Dropping column term
+2023-12-13 11:32:37: Dropping column emp_length
+2023-12-13 11:32:39: Dropping column debt_settlement_flag_date
+2023-12-13 11:32:42: Dropping column earliest_cr_line
+2023-12-13 11:32:44: Dropping column hardship_end_date
+2023-12-13 11:32:46: Dropping column hardship_start_date
+2023-12-13 11:32:48: Dropping column issue_d
+2023-12-13 11:32:51: Dropping column last_credit_pull_d
+2023-12-13 11:32:53: Dropping column last_pymnt_d
+2023-12-13 11:32:55: Dropping column next_pymnt_d
+2023-12-13 11:32:57: Dropping column payment_plan_start_date
+2023-12-13 11:32:59: Dropping column sec_app_earliest_cr_line
+2023-12-13 11:33:02: Dropping column settlement_date
+2023-12-13 11:33:04: Dropping column debt_settlement_flag_date_dt
+2023-12-13 11:33:06: Dropping column earliest_cr_line_dt
+2023-12-13 11:33:08: Dropping column hardship_end_date_dt
+2023-12-13 11:33:10: Dropping column hardship_start_date_dt
+2023-12-13 11:33:12: Dropping column issue_d_dt
+2023-12-13 11:33:14: Dropping column last_credit_pull_d_dt
+2023-12-13 11:33:16: Dropping column last_pymnt_d_dt
+2023-12-13 11:33:18: Dropping column next_pymnt_d_dt
+2023-12-13 11:33:20: Dropping column payment_plan_start_date_dt
+2023-12-13 11:33:22: Dropping column sec_app_earliest_cr_line_dt
+2023-12-13 11:33:24: Dropping column settlement_date_dt
+2023-12-13 11:33:26: Filling NaNs on some columns
+2023-12-13 11:33:26: Filling NaNs in column tot_coll_amt with -1
+2023-12-13 11:33:26: Filling NaNs in column tot_cur_bal with -1
+2023-12-13 11:33:26: Filling NaNs in column all_util with -1
+2023-12-13 11:33:26: Filling NaNs in column annual_inc_joint with -1
+2023-12-13 11:33:26: Filling NaNs in column bc_open_to_buy with -1
+2023-12-13 11:33:26: Filling NaNs in column deferral_term with -1
+2023-12-13 11:33:26: Filling NaNs in column collection_recovery_fee with -1
+2023-12-13 11:33:26: Filling NaNs in column hardship_last_payment_amount with -1
+2023-12-13 11:33:26: Filling NaNs in column hardship_payoff_balance_amount with -1
+2023-12-13 11:33:26: Filling NaNs in column max_bal_bc with -1
+2023-12-13 11:33:26: Filling NaNs in column mo_sin_old_il_acct with -1
+2023-12-13 11:33:26: Filling NaNs in column mo_sin_old_rev_tl_op with -1
+2023-12-13 11:33:26: Filling NaNs in column mo_sin_rcnt_rev_tl_op with -1
+2023-12-13 11:33:26: Filling NaNs in column mo_sin_rcnt_tl with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_last_delinq with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_last_major_derog with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_last_record with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_rcnt_il with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_recent_bc with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_recent_bc_dlq with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_recent_inq with -1
+2023-12-13 11:33:26: Filling NaNs in column mths_since_recent_revol_delinq with -1
+2023-12-13 11:33:26: Filling NaNs in column revol_bal_joint with -1
+2023-12-13 11:33:26: Filling NaNs in column sec_app_fico_range_high with -1
+2023-12-13 11:33:26: Filling NaNs in column sec_app_fico_range_low with -1
+2023-12-13 11:33:26: Filling NaNs in column sec_app_mort_acc with -1
+2023-12-13 11:33:26: Filling NaNs in column sec_app_mths_since_last_major_derog with -1
+2023-12-13 11:33:26: Filling NaNs in column settlement_amount with -1
+2023-12-13 11:33:26: Filling NaNs in column settlement_percentage with -1
+2023-12-13 11:33:26: Filling NaNs in column settlement_term with -1
+2023-12-13 11:33:26: Filling NaNs in column zip_code with -1
+2023-12-13 11:33:26: Filling NaNs in column total_rev_hi_lim with -1
+2023-12-13 11:33:27: Filling NaNs in column tot_hi_cred_lim with -1
+2023-12-13 11:33:27: Filling NaNs in column total_bc_limit with -1
+2023-12-13 11:33:27: Filling NaNs in column total_il_high_credit_limit with -1
+2023-12-13 11:33:27: Filling NaNs in column acc_now_delinq with 0
+2023-12-13 11:33:27: Filling NaNs in column acc_open_past_24mths with 0
+2023-12-13 11:33:27: Filling NaNs in column annual_inc with 0
+2023-12-13 11:33:27: Filling NaNs in column avg_cur_bal with 0
+2023-12-13 11:33:27: Filling NaNs in column chargeoff_within_12_mths with 0
+2023-12-13 11:33:27: Filling NaNs in column collections_12_mths_ex_med with 0
+2023-12-13 11:33:27: Filling NaNs in column delinq_2yrs with 0
+2023-12-13 11:33:27: Filling NaNs in column delinq_amnt with 0
+2023-12-13 11:33:27: Filling NaNs in column hardship_amount with 0
+2023-12-13 11:33:27: Filling NaNs in column hardship_dpd with 0
+2023-12-13 11:33:27: Filling NaNs in column hardship_length with 0
+2023-12-13 11:33:27: Filling NaNs in column inq_fi with 0
+2023-12-13 11:33:27: Filling NaNs in column inq_last_12m with 0
+2023-12-13 11:33:27: Filling NaNs in column inq_last_6mths with 0
+2023-12-13 11:33:27: Filling NaNs in column mort_acc with 0
+2023-12-13 11:33:27: Filling NaNs in column num_accts_ever_120_pd with 0
+2023-12-13 11:33:27: Filling NaNs in column num_actv_bc_tl with 0
+2023-12-13 11:33:27: Filling NaNs in column num_actv_rev_tl with 0
+2023-12-13 11:33:27: Filling NaNs in column num_tl_120dpd_2m with 0
+2023-12-13 11:33:27: Filling NaNs in column open_acc_6m with 0
+2023-12-13 11:33:27: Filling NaNs in column open_act_il with 0
+2023-12-13 11:33:27: Filling NaNs in column open_il_12m with 0
+2023-12-13 11:33:27: Filling NaNs in column open_il_24m with 0
+2023-12-13 11:33:27: Filling NaNs in column open_rv_12m with 0
+2023-12-13 11:33:27: Filling NaNs in column open_rv_24m with 0
+2023-12-13 11:33:27: Filling NaNs in column orig_projected_additional_accrued_interest with 0
+2023-12-13 11:33:27: Filling NaNs in column sec_app_chargeoff_within_12_mths with 0
+2023-12-13 11:33:27: Filling NaNs in column sec_app_collections_12_mths_ex_med with 0
+2023-12-13 11:33:27: Filling NaNs in column sec_app_inq_last_6mths with 0
+2023-12-13 11:33:27: Filling NaNs in column sec_app_num_rev_accts with 0
+2023-12-13 11:33:27: Filling NaNs in column sec_app_open_acc with 0
+2023-12-13 11:33:27: Filling NaNs in column sec_app_open_act_il with 0
+2023-12-13 11:33:27: Filling NaNs in column total_bal_il with 0
+2023-12-13 11:33:27: Filling NaNs in column total_cu_tl with 0
+2023-12-13 11:33:27: Filling NaNs in column open_acc with 0
+2023-12-13 11:33:27: Filling NaNs in column pub_rec with 0
+2023-12-13 11:33:27: Filling NaNs in column total_acc with 0
+2023-12-13 11:33:27: Filling NaNs in column num_bc_sats with 0
+2023-12-13 11:33:27: Filling NaNs in column num_bc_tl with 0
+2023-12-13 11:33:27: Filling NaNs in column num_il_tl with 0
+2023-12-13 11:33:27: Filling NaNs in column num_op_rev_tl with 0
+2023-12-13 11:33:27: Filling NaNs in column num_rev_accts with 0
+2023-12-13 11:33:27: Filling NaNs in column num_rev_tl_bal_gt_0 with 0
+2023-12-13 11:33:27: Filling NaNs in column num_sats with 0
+2023-12-13 11:33:27: Filling NaNs in column num_tl_30dpd with 0
+2023-12-13 11:33:27: Filling NaNs in column num_tl_90g_dpd_24m with 0
+2023-12-13 11:33:27: Filling NaNs in column num_tl_op_past_12m with 0
+2023-12-13 11:33:27: Filling NaNs in column pub_rec_bankruptcies with 0
+2023-12-13 11:33:27: Filling NaNs in column tax_liens with 0
+2023-12-13 11:33:27: Filling NaNs in column total_bal_ex_mort with 0
+2023-12-13 11:33:27: Filling NaNs in column bc_util with 1
+2023-12-13 11:33:27: Filling NaNs in column dti with 1
+2023-12-13 11:33:27: Filling NaNs in column dti_joint with 1
+2023-12-13 11:33:27: Filling NaNs in column il_util with 1
+2023-12-13 11:33:27: Filling NaNs in column revol_util with 1
+2023-12-13 11:33:27: Filling NaNs in column sec_app_revol_util with 1
+2023-12-13 11:33:27: Filling NaNs in column debt_settlement_flag with 'N'
+2023-12-13 11:33:27: Filling NaNs in column hardship_flag with 'N'
+2023-12-13 11:33:27: Filling NaNs in column desc with an empty string
+2023-12-13 11:33:27: Filling NaNs in column emp_title with an empty string
+2023-12-13 11:33:27: Filling NaNs in column addr_state with an empty string
+2023-12-13 11:33:27: Filling NaNs in column application_type with an empty string
+2023-12-13 11:33:27: Filling NaNs in column disbursement_method with an empty string
+2023-12-13 11:33:28: Filling NaNs in column hardship_loan_status with an empty string
+2023-12-13 11:33:28: Filling NaNs in column hardship_reason with an empty string
+2023-12-13 11:33:28: Filling NaNs in column hardship_status with an empty string
+2023-12-13 11:33:28: Filling NaNs in column settlement_status with an empty string
+2023-12-13 11:33:28: Filling NaNs in column title with an empty string
+2023-12-13 11:33:28: Filling NaNs in column verification_status_joint with an empty string
+2023-12-13 11:33:28: Filling NaNs in column hardship_type with an empty string
+2023-12-13 11:33:28: Filling NaNs in column pct_tl_nvr_dlq with 100
+2023-12-13 11:33:28: Filling NaNs in column percent_bc_gt_75 with 100
+2023-12-13 11:33:28: Dropping columns: ['fico_range_high', 'fico_range_low', 'funded_amnt', 'funded_amnt_inv', 'grade']
+2023-12-13 11:33:31: Modifying Columns
+2023-12-13 11:33:32: Casting columns to Best Types
+2023-12-13 11:33:33: Converting acc_now_delinq elements from float64 to int8
+2023-12-13 11:33:33: Converting acc_open_past_24mths elements from float64 to int8
+2023-12-13 11:33:36: Converting addr_state elements from object to object
+2023-12-13 11:33:39: Converting all_util elements from float64 to int16
+2023-12-13 11:33:39: Converting annual_inc elements from float64 to float64
+2023-12-13 11:33:40: Converting annual_inc_joint elements from float64 to float64
+2023-12-13 11:33:43: Converting application_type elements from object to object
+2023-12-13 11:33:46: Converting avg_cur_bal elements from float64 to int32
+2023-12-13 11:33:46: Converting bc_open_to_buy elements from float64 to int32
+2023-12-13 11:33:47: Converting bc_util elements from float64 to float32
+2023-12-13 11:33:47: Converting chargeoff_within_12_mths elements from float64 to int8
+2023-12-13 11:33:48: Converting collection_recovery_fee elements from float64 to float32
+2023-12-13 11:33:48: Converting collections_12_mths_ex_med elements from float64 to int8
+2023-12-13 11:33:49: Converting debt_settlement_flag elements from object to bool
+2023-12-13 11:33:50: Converting debt_settlement_flag_date_unix elements from int64 to int32
+2023-12-13 11:33:51: Converting deferral_term elements from float64 to int8
+2023-12-13 11:33:51: Converting delinq_2yrs elements from float64 to int8
+2023-12-13 11:33:51: Converting delinq_amnt elements from float64 to int32
+2023-12-13 11:33:52: Converting desc elements from object to object
+2023-12-13 11:33:56: Converting disbursement_method elements from object to object
+2023-12-13 11:33:59: Converting dti elements from float64 to float32
+2023-12-13 11:34:00: Converting dti_joint elements from float64 to float32
+2023-12-13 11:34:00: Converting earliest_cr_line_unix elements from int64 to int32
+2023-12-13 11:34:00: Converting emp_length_years elements from int64 to int8
+2023-12-13 11:34:03: Converting emp_title elements from object to object
+2023-12-13 11:34:06: Converting fico_range_high elements from float64 to int16
+2023-12-13 11:34:07: Converting fico_range_low elements from float64 to int16
+2023-12-13 11:34:07: Converting funded_amnt elements from float64 to int32
+2023-12-13 11:34:08: Converting funded_amnt_inv elements from float64 to float64
+2023-12-13 11:34:11: Converting grade elements from object to object
+2023-12-13 11:34:14: Converting hardship_amount elements from float64 to float32
+2023-12-13 11:34:14: Converting hardship_dpd elements from float64 to int8
+2023-12-13 11:34:14: Converting hardship_end_date_unix elements from int64 to int32
+2023-12-13 11:34:15: Converting hardship_flag elements from object to bool
+2023-12-13 11:34:16: Converting hardship_last_payment_amount elements from float64 to float32
+2023-12-13 11:34:17: Converting hardship_length elements from float64 to int8
+2023-12-13 11:34:17: Converting hardship_loan_status elements from object to object
+2023-12-13 11:34:18: Converting hardship_payoff_balance_amount elements from float64 to float64
+2023-12-13 11:34:19: Converting hardship_reason elements from object to object
+2023-12-13 11:34:20: Converting hardship_start_date_unix elements from int64 to int32
+2023-12-13 11:34:21: Converting hardship_status elements from object to object
+2023-12-13 11:34:22: Converting hardship_type elements from object to object
+2023-12-13 11:34:25: Converting home_ownership elements from object to object
+2023-12-13 11:34:28: Converting id elements from int64 to int32
+2023-12-13 11:34:28: Converting il_util elements from float64 to int16
+2023-12-13 11:34:31: Converting initial_list_status elements from object to object
+2023-12-13 11:34:33: Converting inq_fi elements from float64 to int8
+2023-12-13 11:34:34: Converting inq_last_12m elements from float64 to int8
+2023-12-13 11:34:34: Converting inq_last_6mths elements from float64 to int8
+2023-12-13 11:34:35: Converting installment elements from float64 to float32
+2023-12-13 11:34:36: Converting int_rate elements from float64 to float32
+2023-12-13 11:34:36: Converting issue_d_unix elements from int64 to int32
+2023-12-13 11:34:37: Converting last_credit_pull_d_unix elements from int64 to int32
+2023-12-13 11:34:37: Converting last_fico_range_high elements from float64 to int16
+2023-12-13 11:34:38: Converting last_fico_range_low elements from float64 to int16
+2023-12-13 11:34:38: Converting last_pymnt_amnt elements from float64 to float64
+2023-12-13 11:34:39: Converting last_pymnt_d_unix elements from int64 to int32
+2023-12-13 11:34:39: Converting loan_amnt elements from float64 to int32
+2023-12-13 11:34:42: Converting loan_status elements from object to object
+2023-12-13 11:34:45: Converting max_bal_bc elements from float64 to int32
+2023-12-13 11:34:46: Converting mo_sin_old_il_acct elements from float64 to int16
+2023-12-13 11:34:46: Converting mo_sin_old_rev_tl_op elements from float64 to int16
+2023-12-13 11:34:46: Converting mo_sin_rcnt_rev_tl_op elements from float64 to int16
+2023-12-13 11:34:47: Converting mo_sin_rcnt_tl elements from float64 to int16
+2023-12-13 11:34:47: Converting mort_acc elements from float64 to int8
+2023-12-13 11:34:48: Converting mths_since_last_delinq elements from float64 to int16
+2023-12-13 11:34:48: Converting mths_since_last_major_derog elements from float64 to int16
+2023-12-13 11:34:49: Converting mths_since_last_record elements from float64 to int16
+2023-12-13 11:34:49: Converting mths_since_rcnt_il elements from float64 to int16
+2023-12-13 11:34:49: Converting mths_since_recent_bc elements from float64 to int16
+2023-12-13 11:34:50: Converting mths_since_recent_bc_dlq elements from float64 to int16
+2023-12-13 11:34:50: Converting mths_since_recent_inq elements from float64 to int8
+2023-12-13 11:34:51: Converting mths_since_recent_revol_delinq elements from float64 to int16
+2023-12-13 11:34:51: Converting next_pymnt_d_unix elements from int64 to int32
+2023-12-13 11:34:51: Converting num_accts_ever_120_pd elements from float64 to int8
+2023-12-13 11:34:52: Converting num_actv_bc_tl elements from float64 to int8
+2023-12-13 11:34:52: Converting num_actv_rev_tl elements from float64 to int8
+2023-12-13 11:34:53: Converting num_bc_sats elements from float64 to int8
+2023-12-13 11:34:53: Converting num_bc_tl elements from float64 to int8
+2023-12-13 11:34:53: Converting num_il_tl elements from float64 to int16
+2023-12-13 11:34:54: Converting num_op_rev_tl elements from float64 to int8
+2023-12-13 11:34:54: Converting num_rev_accts elements from float64 to int16
+2023-12-13 11:34:55: Converting num_rev_tl_bal_gt_0 elements from float64 to int8
+2023-12-13 11:34:55: Converting num_sats elements from float64 to int8
+2023-12-13 11:34:56: Converting num_tl_120dpd_2m elements from float64 to int8
+2023-12-13 11:34:56: Converting num_tl_30dpd elements from float64 to int8
+2023-12-13 11:34:56: Converting num_tl_90g_dpd_24m elements from float64 to int8
+2023-12-13 11:34:57: Converting num_tl_op_past_12m elements from float64 to int8
+2023-12-13 11:34:57: Converting open_acc elements from float64 to int8
+2023-12-13 11:34:57: Converting open_acc_6m elements from float64 to int8
+2023-12-13 11:34:58: Converting open_act_il elements from float64 to int8
+2023-12-13 11:34:58: Converting open_il_12m elements from float64 to int8
+2023-12-13 11:34:59: Converting open_il_24m elements from float64 to int8
+2023-12-13 11:34:59: Converting open_rv_12m elements from float64 to int8
+2023-12-13 11:34:59: Converting open_rv_24m elements from float64 to int8
+2023-12-13 11:35:00: Converting orig_projected_additional_accrued_interest elements from float64 to float32
+2023-12-13 11:35:01: Converting out_prncp elements from float64 to float64
+2023-12-13 11:35:01: Converting out_prncp_inv elements from float64 to float64
+2023-12-13 11:35:02: Converting payment_plan_start_date_unix elements from int64 to int32
+2023-12-13 11:35:02: Converting pct_tl_nvr_dlq elements from float64 to float32
+2023-12-13 11:35:03: Converting percent_bc_gt_75 elements from float64 to float32
+2023-12-13 11:35:04: Converting policy_code elements from float64 to bool
+2023-12-13 11:35:04: Converting pub_rec elements from float64 to int8
+2023-12-13 11:35:05: Converting pub_rec_bankruptcies elements from float64 to int8
+2023-12-13 11:35:08: Converting purpose elements from object to object
+2023-12-13 11:35:13: Converting pymnt_plan elements from object to object
+2023-12-13 11:35:15: Converting recoveries elements from float64 to float64
+2023-12-13 11:35:16: Converting revol_bal elements from float64 to int32
+2023-12-13 11:35:17: Converting revol_bal_joint elements from float64 to int32
+2023-12-13 11:35:17: Converting revol_util elements from float64 to float32
+2023-12-13 11:35:18: Converting sec_app_chargeoff_within_12_mths elements from float64 to int8
+2023-12-13 11:35:18: Converting sec_app_collections_12_mths_ex_med elements from float64 to int8
+2023-12-13 11:35:19: Converting sec_app_earliest_cr_line_unix elements from int64 to int32
+2023-12-13 11:35:19: Converting sec_app_fico_range_high elements from float64 to int16
+2023-12-13 11:35:20: Converting sec_app_fico_range_low elements from float64 to int16
+2023-12-13 11:35:20: Converting sec_app_inq_last_6mths elements from float64 to int8
+2023-12-13 11:35:21: Converting sec_app_mort_acc elements from float64 to int8
+2023-12-13 11:35:21: Converting sec_app_mths_since_last_major_derog elements from float64 to int16
+2023-12-13 11:35:21: Converting sec_app_num_rev_accts elements from float64 to int8
+2023-12-13 11:35:22: Converting sec_app_open_acc elements from float64 to int8
+2023-12-13 11:35:22: Converting sec_app_open_act_il elements from float64 to int8
+2023-12-13 11:35:23: Converting sec_app_revol_util elements from float64 to float32
+2023-12-13 11:35:24: Converting settlement_amount elements from float64 to float64
+2023-12-13 11:35:24: Converting settlement_date_unix elements from int64 to int32
+2023-12-13 11:35:25: Converting settlement_percentage elements from float64 to float32
+2023-12-13 11:35:26: Converting settlement_status elements from object to object
+2023-12-13 11:35:26: Converting settlement_term elements from float64 to int16
+2023-12-13 11:35:29: Converting sub_grade elements from object to object
+2023-12-13 11:35:32: Converting tax_liens elements from float64 to int8
+2023-12-13 11:35:32: Converting term_months elements from int64 to int8
+2023-12-13 11:35:35: Converting title elements from object to object
+2023-12-13 11:35:38: Converting tot_coll_amt elements from float64 to int32
+2023-12-13 11:35:39: Converting tot_cur_bal elements from float64 to int32
+2023-12-13 11:35:39: Converting tot_hi_cred_lim elements from float64 to int32
+2023-12-13 11:35:40: Converting total_acc elements from float64 to int16
+2023-12-13 11:35:40: Converting total_bal_ex_mort elements from float64 to int32
+2023-12-13 11:35:41: Converting total_bal_il elements from float64 to int32
+2023-12-13 11:35:41: Converting total_bc_limit elements from float64 to int32
+2023-12-13 11:35:42: Converting total_cu_tl elements from float64 to int8
+2023-12-13 11:35:42: Converting total_il_high_credit_limit elements from float64 to int32
+2023-12-13 11:35:43: Converting total_pymnt elements from float64 to float64
+2023-12-13 11:35:44: Converting total_pymnt_inv elements from float64 to float64
+2023-12-13 11:35:44: Converting total_rec_int elements from float64 to float64
+2023-12-13 11:35:45: Converting total_rec_late_fee elements from float64 to float32
+2023-12-13 11:35:46: Converting total_rec_prncp elements from float64 to float64
+2023-12-13 11:35:47: Converting total_rev_hi_lim elements from float64 to int32
+2023-12-13 11:35:50: Converting url elements from object to object
+2023-12-13 11:35:55: Converting verification_status elements from object to object
+2023-12-13 11:35:58: Converting verification_status_joint elements from object to object
+2023-12-13 11:36:02: Converting zip_code elements from object to int16
+2023-12-13 11:36:05: Creating Metadata Dataframe
+2023-12-13 11:36:05: Creating Descriptions Dataframe
+2023-12-13 11:36:05: Connecting to Database
+2023-12-13 11:36:05: Creating Queries
+2023-12-13 11:36:05: Dropping old tables and creating new ones
+2023-12-13 11:36:25: Loading data into tables
+2023-12-13 11:37:46: ----------------------Done with csv_to_sqlite.py----------------------
+2023-12-13 13:43:50: ----------------------Logger Initialized for csv_to_sqlite.py----------------------
+2023-12-13 13:43:50: Reading Columns Full Names
+2023-12-13 13:43:50: Reading Columns Descriptions
+2023-12-13 13:43:50: Loading data CSV

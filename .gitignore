@@ -140,6 +140,7 @@ dmypy.json
 cython_debug/
 
 # My own ignores
-data
+data/*.csv
 outputs/*/data
+outputs/*/log
 tmp
