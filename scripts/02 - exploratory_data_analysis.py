@@ -143,7 +143,7 @@ with open(config_file_path, 'r') as f:
 print("Defining Variables and Creating Directories")
 
 # Extract various configuration settings from the config file
-database_file = config['base']['database_file']
+sqlite_file = config['data']['output_sqlite']
 columns_of_interest = config['base']['columns_of_interest']
 tag = config['base']['tag']
 git_repo = config['base']['git_repo']
@@ -151,6 +151,7 @@ fontsize = config['plotting']['fontsize']
 figsize_x = config['plotting']['figure_xsize']
 figsize_y = config['plotting']['figure_ysize']
 
+sqlite_file = f"outputs/{tag}/data/{sqlite_file}"
 # Create the output directories
 out_dir_figures = f"outputs/{tag}/figures"
 out_dir_stats = f"outputs/{tag}/stats"
@@ -166,10 +167,10 @@ logger.log("----------------------Logger Initialized for exploratory_data_analys
 logger.log("Loading Data")
 
 # Defining the connection to the database
-conn = sqlite3.connect(database_file)
+conn = sqlite3.connect(sqlite_file)
 
 # Defining the query to fetch the descriptions
-description_fetch_query = f"""SELECT *  FROM descriptions """
+description_fetch_query = f"""SELECT * FROM descriptions"""
 
 # Loading descriptions into dataframe
 descriptions = pd.read_sql_query(description_fetch_query, conn, index_col = 'name')
@@ -180,8 +181,7 @@ column_types = {idx:transform_type(row['data_type']) for idx, row in description
 # Defining the query to fetch the data
 data_fetch_query = f"""SELECT {', '.join(columns_of_interest)} 
                        FROM loans_data
-                       ORDER BY RANDOM()
-                       LIMIT 10000"""
+                       ORDER BY RANDOM()"""
 
 # Loading the data into a dataframe
 loans_data = pd.read_sql_query(data_fetch_query, conn, index_col='id', dtype=column_types)
@@ -657,7 +657,7 @@ for table in tables:
     df = pd.read_csv(f'outputs/{tag}/stats/{table}', index_col=0)
     markdown_string += f"## {table[:-4].replace('_',' ')}\n{df.to_markdown()}\n"
 
-images = sorted([f for f in os.listdir(f'/outputs/{tag}/figures/') if f.endswith('.png')])
+images = sorted([f for f in os.listdir(f'outputs/{tag}/figures/') if f.endswith('.png')])
 
 for image in images:
     subtitle = f"## {image.split('-',1)[-1][:-4].replace('_',' ')}"

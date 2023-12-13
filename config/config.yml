@@ -1,6 +1,5 @@
 base:
     tag: 'prototype'
-    database_file: 'data/All_Lending_Club_Loan_2007_2018.sqlite'
     columns_of_interest: ['id', 'loan_amnt', 'term_months', 'int_rate', 'installment', 'grade', 'sub_grade',
                        'home_ownership', 'annual_inc', 'verification_status',
                        'issue_d_unix', 'loan_status', 'purpose', 'dti', 

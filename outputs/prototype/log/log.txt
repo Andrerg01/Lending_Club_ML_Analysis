@@ -1412,3 +1412,72 @@
 2023-12-13 15:34:22: Dropping old tables and creating new ones
 2023-12-13 15:34:59: Loading data into tables
 2023-12-13 15:36:52: ----------------------Done with csv_to_sqlite.py----------------------
+2023-12-13 15:45:58: ----------------------Logger Initialized for exploratory_data_analysis.py----------------------
+2023-12-13 15:45:58: Loading Data
+2023-12-13 15:47:28: ----------------------Logger Initialized for exploratory_data_analysis.py----------------------
+2023-12-13 15:47:28: Loading Data
+2023-12-13 15:48:10: ----------------------Logger Initialized for exploratory_data_analysis.py----------------------
+2023-12-13 15:48:10: Loading Data
+2023-12-13 15:50:09: ----------------------Logger Initialized for exploratory_data_analysis.py----------------------
+2023-12-13 15:50:09: Loading Data
+2023-12-13 15:50:10: Filtering known bad columns
+2023-12-13 15:50:10: Creating columns
+2023-12-13 15:50:10: Limiting dataset to two types of Loan Status only
+2023-12-13 15:50:10: Computing Numerical Statistics for All Columns
+2023-12-13 15:50:11: Plotting Loan_Status_Distribution
+2023-12-13 15:50:11: Plotting Correlation_Matrix
+2023-12-13 15:50:11: Plotting Distribution_of_Installments_By_Loan_Status
+2023-12-13 15:50:12: Plotting Distribution_of_Loan_Amount_By_Loan_Status
+2023-12-13 15:50:12: Plotting Distribution_of_Interest_Rate_By_Loan_Status
+2023-12-13 15:50:12: Plotting Distribution_of_Annual_Income_By_Loan_Status
+2023-12-13 15:50:12: Plotting Violin_of_Installments_By_Loan_Status
+2023-12-13 15:50:13: Plotting Violin_of_Loan_Amount_By_Loan_Status
+2023-12-13 15:50:13: Plotting Distribution_of_Loan_Grade_By_Loan_Status
+2023-12-13 15:50:13: Plotting Distribution_of_Loan_Sub_Grade_By_Loan_Status
+2023-12-13 15:50:13: Plotting Distribution_of_Home_Ownership_Status_By_Loan_Status
+2023-12-13 15:50:14: Plotting Distribution_of_Income_Verification_Status_By_Loan_Status
+2023-12-13 15:50:14: Plotting Distribution_of_Term_Length_By_Loan_Status
+2023-12-13 15:50:14: Plotting Distribution_of_Loan_Purpose_By_Loan_Status
+2023-12-13 15:50:14: Plotting Distribution_of_Issue_Date_By_Loan_Status
+2023-12-13 15:50:15: Plotting Distribution_of_Debt_To_Income_By_Loan_Status
+2023-12-13 15:50:15: Plotting Distribution_of_Number_Of_Open_Accounts_By_Loan_Status
+2023-12-13 15:50:15: Plotting Distribution_of_Revolving_Line_Utilization_Rate_By_Loan_Status
+2023-12-13 15:50:15: Plotting Distribution_of_Revolving_Balance_By_Loan_Status
+2023-12-13 15:50:15: Plotting Distribution_of_Number_of_Public_Records_By_Loan_Status
+2023-12-13 15:50:16: Plotting Distribution_of_Initial_Listing_Status_By_Loan_Status
+2023-12-13 15:50:16: Plotting Distribution_of_Application_Type_By_Loan_Status
+2023-12-13 15:50:16: Plotting Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status
+2023-12-13 15:50:16: Plotting Correlation_Between_Loan_Status_And_Numerical_Features
+2023-12-13 15:50:17: Creating Automated Exploratory Data Analysis Report, will only show after github push.
+2023-12-13 15:51:03: ----------------------Logger Initialized for exploratory_data_analysis.py----------------------
+2023-12-13 15:51:03: Loading Data
+2023-12-13 15:51:44: Filtering known bad columns
+2023-12-13 15:51:47: Creating columns
+2023-12-13 15:51:47: Limiting dataset to two types of Loan Status only
+2023-12-13 15:51:48: Computing Numerical Statistics for All Columns
+2023-12-13 15:51:48: Plotting Loan_Status_Distribution
+2023-12-13 15:51:52: Plotting Correlation_Matrix
+2023-12-13 15:51:54: Plotting Distribution_of_Installments_By_Loan_Status
+2023-12-13 15:51:56: Plotting Distribution_of_Loan_Amount_By_Loan_Status
+2023-12-13 15:51:58: Plotting Distribution_of_Interest_Rate_By_Loan_Status
+2023-12-13 15:52:00: Plotting Distribution_of_Annual_Income_By_Loan_Status
+2023-12-13 15:52:02: Plotting Violin_of_Installments_By_Loan_Status
+2023-12-13 15:52:14: Plotting Violin_of_Loan_Amount_By_Loan_Status
+2023-12-13 15:52:27: Plotting Distribution_of_Loan_Grade_By_Loan_Status
+2023-12-13 15:52:33: Plotting Distribution_of_Loan_Sub_Grade_By_Loan_Status
+2023-12-13 15:52:42: Plotting Distribution_of_Home_Ownership_Status_By_Loan_Status
+2023-12-13 15:52:51: Plotting Distribution_of_Income_Verification_Status_By_Loan_Status
+2023-12-13 15:53:00: Plotting Distribution_of_Term_Length_By_Loan_Status
+2023-12-13 15:53:07: Plotting Distribution_of_Loan_Purpose_By_Loan_Status
+2023-12-13 15:53:16: Plotting Distribution_of_Issue_Date_By_Loan_Status
+2023-12-13 15:53:21: Plotting Distribution_of_Debt_To_Income_By_Loan_Status
+2023-12-13 15:53:23: Plotting Distribution_of_Number_Of_Open_Accounts_By_Loan_Status
+2023-12-13 15:53:25: Plotting Distribution_of_Revolving_Line_Utilization_Rate_By_Loan_Status
+2023-12-13 15:53:27: Plotting Distribution_of_Revolving_Balance_By_Loan_Status
+2023-12-13 15:53:28: Plotting Distribution_of_Number_of_Public_Records_By_Loan_Status
+2023-12-13 15:53:35: Plotting Distribution_of_Initial_Listing_Status_By_Loan_Status
+2023-12-13 15:53:41: Plotting Distribution_of_Application_Type_By_Loan_Status
+2023-12-13 15:53:50: Plotting Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status
+2023-12-13 15:53:58: Plotting Correlation_Between_Loan_Status_And_Numerical_Features
+2023-12-13 15:53:58: Creating Automated Exploratory Data Analysis Report, will only show after github push.
+2023-12-13 15:53:58: Done!
