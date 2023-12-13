@@ -47,3 +47,36 @@
 2023-12-12 15:27:53: Filling proper columns
 2023-12-12 15:27:53: Casting columns in proper types
 2023-12-12 15:28:00: Adjusting all missing values to pd.NA
+2023-12-12 15:51:15: ----------------------Logger Initialized for csv_to_sqlite.py----------------------
+2023-12-12 15:51:15: Reading Columns Full Names
+2023-12-12 15:51:15: Reading Columns Descriptions
+2023-12-12 15:51:15: Loading data CSV
+2023-12-12 15:52:54: Loading Metadata
+2023-12-12 15:52:54: Creating UNIX columns for dates
+2023-12-12 16:34:35: Creating other interesting columns
+2023-12-12 16:34:39: Dropping proper columns
+2023-12-12 16:35:19: Filling proper columns
+2023-12-12 16:35:19: Casting columns in proper types
+2023-12-12 16:35:25: Adjusting all missing values to pd.NA
+2023-12-13 07:58:05: ----------------------Logger Initialized for csv_to_sqlite.py----------------------
+2023-12-13 07:58:05: Reading Columns Full Names
+2023-12-13 07:58:05: Reading Columns Descriptions
+2023-12-13 07:58:05: Loading data CSV
+2023-12-13 07:59:34: Loading Metadata
+2023-12-13 07:59:34: Creating UNIX columns for dates
+2023-12-13 08:46:41: Creating other interesting columns
+2023-12-13 08:46:47: Dropping proper columns
+2023-12-13 08:47:55: Filling proper columns
+2023-12-13 08:47:55: Casting columns in proper types
+2023-12-13 08:48:04: Adjusting all missing values to pd.NA
+2023-12-13 08:49:53: Connecting to Database
+2023-12-13 08:49:53: Creating Queries
+2023-12-13 08:49:53: Dropping old tables and creating new ones
+2023-12-13 08:49:53: Loading data into tables
+2023-12-13 08:53:24: ----------------------Done with csv_to_sqlite.py----------------------
+2023-12-13 11:01:51: ----------------------Logger Initialized for csv_to_sqlite.py----------------------
+2023-12-13 11:01:51: Reading Columns Full Names
+2023-12-13 11:01:51: Reading Columns Descriptions
+2023-12-13 11:01:51: Loading data CSV
+2023-12-13 11:03:43: Loading Metadata
+2023-12-13 11:03:43: Finding Date Columns

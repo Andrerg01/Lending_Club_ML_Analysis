@@ -78,6 +78,8 @@ columns_of_interest = config['base']['columns_of_interest']
 
 tag = config['base']['tag']
 
+git_repo = config['base']['git_repo']
+
 out_dir_figures = f"outputs/{tag}/figures"
 out_dir_stats = f"outputs/{tag}/stats"
 out_dir_log = f"outputs/{tag}/log"
@@ -159,7 +161,7 @@ numerical_stats = loans_data.describe().transpose()
 # Adding description of each row
 numerical_stats['description'] = [descriptions.loc[name]['description'] for name in numerical_stats.index]
 # Displaying the descriptive statistics
-numerical_stats.to_csv(f"{out_dir_stats}/numerical_statistics.csv")
+numerical_stats.to_csv(f"{out_dir_stats}/Numerical_Statistics.csv")
 
 fontsize = config['plotting']['fontsize']
 figsize_x = config['plotting']['figure_xsize']
@@ -486,7 +488,7 @@ fig.savefig(f'{out_dir_figures}/18-Distribution_of_Number_Of_Open_Accounts_By_Lo
 
 plt.close("all")
 
-logger.log("Plotting Distribution_of_Revol_Util_By_Loan_Status")
+logger.log("Plotting Distribution_of_Revolving_Line_Utilization_Rate_By_Loan_Status")
 fig, ax = plt.subplots(figsize = [10, 10/1.62])
 
 best_bw_revol_util = bestbandwidth(loans_data['revol_util'])
@@ -501,11 +503,11 @@ ax.set_title("Distribution of Revolving Line Utilization Rate by Loan Status", f
 ax.legend()
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/19-Distribution_of_Revol_Util_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/19-Distribution_of_Revolving_Line_Utilization_Rate_By_Loan_Status.png')
 
 plt.close("all")
 
-logger.log("Plotting Distribution_of_Revol_Bal_By_Loan_Status")
+logger.log("Plotting Distribution_of_Revolving_Balance_By_Loan_Status")
 fig, ax = plt.subplots(figsize = [10, 10/1.62])
 
 best_bw_revol_bal = bestbandwidth(loans_data['revol_bal'])
@@ -520,7 +522,7 @@ ax.set_title("Distribution of Revolving Balance by Loan Status", fontsize=fontsi
 ax.legend()
 fig.tight_layout()
 
-fig.savefig(f'{out_dir_figures}/20-Distribution_of_Revol_Bal_By_Loan_Status.png')
+fig.savefig(f'{out_dir_figures}/20-Distribution_of_Revolving_Balance_By_Loan_Status.png')
 
 plt.close("all")
 
@@ -613,5 +615,33 @@ fig.tight_layout()
 fig.savefig(f'{out_dir_figures}/26-Correlation_Between_Loan_Status_And_Numerical_Features.png')
 
 plt.close("all")
+
+logger.log("Creating Automated Exploratory Data Analysis Report, will only show after github push.")
+
+git_link = git_repo.replace('github.com','raw.githubusercontent.com')
+
+markdown_string = ""
+
+title = "# Automated Exploratory Data Analysis Report"
+
+author = "Andre Guimaraes"
+
+markdown_string += f'{title}\nRun Tag: {tag}\nAuthor: {author}\n'
+
+tables = sorted([f for f in os.listdir(f'outputs/{tag}/stats/') if f.endswith('.csv')])
+
+for table in tables:
+    df = pd.read_csv(f'outputs/{tag}/stats/{table}', index_col=0)
+    markdown_string += f"## {table[:-4].replace('_',' ')}\n{df.to_markdown()}\n"
+
+images = sorted([f for f in os.listdir(f'/outputs/{tag}/figures/') if f.endswith('.png')])
+
+for image in images:
+    subtitle = f"## {image.split('-',1)[-1][:-4].replace('_',' ')}"
+    
+    markdown_string += f"{subtitle}\n![Alt Text]({git_link}/main/outputs/{tag}/figures/{image})\n"
+    
+with open(f'outputs/{tag}/reports/01-Exploratory_Data_Analysis_Report.md', 'w') as f:
+    f.write(markdown_string)
 
 logger.log("Done!")
