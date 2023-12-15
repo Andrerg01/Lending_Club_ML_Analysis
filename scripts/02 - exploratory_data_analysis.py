@@ -649,7 +649,7 @@ author = "Andre Guimaraes"
 
 datetime_string = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-markdown_string += f'{title}\nRun Tag: {tag}\nAuthor: {author}\n{datetime_string}\n'
+markdown_string += f'{title}\n\n**Run Tag**: {tag}\n**Author**: {author}\n\n**Date & Time**: {datetime_string}\n\n'
 
 tables = sorted([f for f in os.listdir(f'outputs/{tag}/stats/') if f.endswith('.csv')])
 

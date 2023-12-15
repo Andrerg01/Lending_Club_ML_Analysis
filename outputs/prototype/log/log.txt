@@ -1513,3 +1513,50 @@
 2023-12-13 16:03:53: Plotting Correlation_Between_Loan_Status_And_Numerical_Features
 2023-12-13 16:03:53: Creating Automated Exploratory Data Analysis Report, will only show after github push.
 2023-12-13 16:03:53: Done!
+2023-12-13 16:13:29: ----------------------Logger Initialized for exploratory_data_analysis.py----------------------
+2023-12-13 16:13:29: Loading Data
+2023-12-13 16:14:13: Filtering known bad columns
+2023-12-13 16:14:16: Creating columns
+2023-12-13 16:14:16: Limiting dataset to two types of Loan Status only
+2023-12-13 16:14:17: Computing Numerical Statistics for All Columns
+2023-12-13 16:14:18: Plotting Loan_Status_Distribution
+2023-12-13 16:14:22: Plotting Correlation_Matrix
+2023-12-13 16:14:23: Plotting Distribution_of_Installments_By_Loan_Status
+2023-12-13 16:14:26: Plotting Distribution_of_Loan_Amount_By_Loan_Status
+2023-12-13 16:14:28: Plotting Distribution_of_Interest_Rate_By_Loan_Status
+2023-12-13 16:14:29: Plotting Distribution_of_Annual_Income_By_Loan_Status
+2023-12-13 16:14:31: Plotting Violin_of_Installments_By_Loan_Status
+2023-12-13 16:14:45: Plotting Violin_of_Loan_Amount_By_Loan_Status
+2023-12-13 16:14:58: Plotting Distribution_of_Loan_Grade_By_Loan_Status
+2023-12-13 16:15:04: Plotting Distribution_of_Loan_Sub_Grade_By_Loan_Status
+2023-12-13 16:15:14: Plotting Distribution_of_Home_Ownership_Status_By_Loan_Status
+2023-12-13 16:15:23: Plotting Distribution_of_Income_Verification_Status_By_Loan_Status
+2023-12-13 16:15:33: Plotting Distribution_of_Term_Length_By_Loan_Status
+2023-12-13 16:15:40: Plotting Distribution_of_Loan_Purpose_By_Loan_Status
+2023-12-13 16:15:49: Plotting Distribution_of_Issue_Date_By_Loan_Status
+2023-12-13 16:15:54: Plotting Distribution_of_Debt_To_Income_By_Loan_Status
+2023-12-13 16:15:56: Plotting Distribution_of_Number_Of_Open_Accounts_By_Loan_Status
+2023-12-13 16:15:58: Plotting Distribution_of_Revolving_Line_Utilization_Rate_By_Loan_Status
+2023-12-13 16:16:00: Plotting Distribution_of_Revolving_Balance_By_Loan_Status
+2023-12-13 16:16:02: Plotting Distribution_of_Number_of_Public_Records_By_Loan_Status
+2023-12-13 16:16:09: Plotting Distribution_of_Initial_Listing_Status_By_Loan_Status
+2023-12-13 16:16:15: Plotting Distribution_of_Application_Type_By_Loan_Status
+2023-12-13 16:16:24: Plotting Distribution_of_Number_of_Public_Record_Bankruptcies_By_Loan_Status
+2023-12-13 16:16:32: Plotting Correlation_Between_Loan_Status_And_Numerical_Features
+2023-12-13 16:16:32: Creating Automated Exploratory Data Analysis Report, will only show after github push.
+2023-12-13 16:16:32: Done!
+2023-12-14 20:24:58: ----------------------Logger Initialized for exploratory_data_analysis.py----------------------
+2023-12-14 20:24:58: Loading Data
+2023-12-14 20:25:43: Filtering known bad columns
+2023-12-14 20:25:45: Creating columns
+2023-12-14 20:25:49: Limiting dataset to two types of Loan Status only
+2023-12-14 20:25:50: Declaring Numerical Columns
+2023-12-14 20:25:50: Declaring Dummy Columns
+2023-12-14 20:25:50: Declaring Columns to Drop
+2023-12-14 20:25:50: Dropping Non-Interesting Columns
+2023-12-14 20:25:51: Creating Dummy Columns
+2023-12-14 20:25:54: Connecting to Database at outputs/prototype/data/All_Lending_Club_Loan_2007_2018.sqlite
+2023-12-14 20:25:54: Creating Queries
+2023-12-14 20:25:54: Dropping old tables and creating new ones
+2023-12-14 20:25:55: Loading data into tables
+2023-12-14 20:26:28: Done!
