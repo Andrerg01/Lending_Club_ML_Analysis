@@ -25,7 +25,7 @@ class Logger:
     def __init__(self, config):
         # Constructor to initialize the Logger instance
         self.config = config  # Store the provided configuration
-        self.log_dir = config['logging']['out-dir']  # Directory to output logs
+        self.log_dir = config['logging']['out_dir']  # Directory to output logs
         self.tag = config['base']['tag']  # Tag for the log (e.g., identifying the run)
         # Construct the file path for the log file
         self.file_path = os.path.join('outputs', self.tag, self.log_dir, 'log.txt')

@@ -19,5 +19,9 @@ plotting:
     figure_ysize: 6.17
     
 logging:
-    out-dir: 'log'
+    out_dir: 'log'
     verbose: True
+
+machine_learning:
+    optimization_sample_size: 10000
+    test_size: 0.2

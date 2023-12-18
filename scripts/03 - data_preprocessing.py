@@ -25,7 +25,7 @@ class Logger:
     def __init__(self, config):
         # Constructor to initialize the Logger instance
         self.config = config  # Store the provided configuration
-        self.log_dir = config['logging']['out-dir']  # Directory to output logs
+        self.log_dir = config['logging']['out_dir']  # Directory to output logs
         self.tag = config['base']['tag']  # Tag for the log (e.g., identifying the run)
         # Construct the file path for the log file
         self.file_path = os.path.join('outputs', self.tag, self.log_dir, 'log.txt')
@@ -233,6 +233,8 @@ logger.log("Limiting dataset to two types of Loan Status only")
 # Limiting dataset to two types of Loan Status only
 loans_data = loans_data[(loans_data['loan_status'] == 'Charged Off') | (loans_data['loan_status'] == 'Fully Paid')]
 
+loans_data['loan_status'] = loans_data['loan_status'].apply(lambda x: x == 'Charged Off')
+
 logger.log("Declaring Numerical Columns")
 # Columns that are numerical and will be used for ML as numbers, rather than dummies
 numerical_columns = ['loan_amnt', 'int_rate', 'installment', 'annual_inc', 
@@ -242,7 +244,7 @@ numerical_columns = ['loan_amnt', 'int_rate', 'installment', 'annual_inc',
 logger.log("Declaring Dummy Columns")
 # Columns that will be converted to dummy variables (True or False)
 dummy_columns = ['term_months', 'sub_grade', 'home_ownership', 'verification_status',
-                 'loan_status', 'purpose', 'initial_list_status', 'application_type']
+                 'purpose', 'initial_list_status', 'application_type']
 
 logger.log("Declaring Columns to Drop")
 # Columns that will be dropped
