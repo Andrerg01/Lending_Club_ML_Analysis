@@ -180,8 +180,7 @@ column_types = {idx:transform_type(row['data_type']) for idx, row in description
 
 # Defining the query to fetch the data
 data_fetch_query = f"""SELECT {', '.join(columns_of_interest)} 
-                       FROM loans_data
-                       ORDER BY RANDOM()"""
+                       FROM loans_data"""
 
 # Loading the data into a dataframe
 loans_data = pd.read_sql_query(data_fetch_query, conn, index_col='id', dtype=column_types)

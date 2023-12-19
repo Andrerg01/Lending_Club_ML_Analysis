@@ -167,7 +167,6 @@ tag = config['base']['tag']
 
 sqlite_file = f"outputs/{tag}/data/{sqlite_file}"
 
-
 print("Initializing Logger")
 
 # Initialize a Logger instance using the configuration
@@ -191,8 +190,7 @@ column_types = {idx:transform_type(row['data_type']) for idx, row in description
 
 # Defining the query to fetch the data
 data_fetch_query = f"""SELECT {', '.join(columns_of_interest)} 
-                       FROM loans_data
-                       ORDER BY RANDOM()"""
+                       FROM loans_data"""
 
 # Loading the data into a dataframe
 loans_data = pd.read_sql_query(data_fetch_query, conn, index_col='id', dtype=column_types)
@@ -239,7 +237,7 @@ logger.log("Declaring Numerical Columns")
 # Columns that are numerical and will be used for ML as numbers, rather than dummies
 numerical_columns = ['loan_amnt', 'int_rate', 'installment', 'annual_inc', 
                      'dti', 'open_acc', 'pub_rec', 'revol_bal', 'revol_util', 'total_acc',
-                     'mort_acc', 'pub_rec_bankruptcies']
+                     'mort_acc', 'pub_rec_bankruptcies', ]
 
 logger.log("Declaring Dummy Columns")
 # Columns that will be converted to dummy variables (True or False)

@@ -1560,3 +1560,183 @@
 2023-12-14 20:25:54: Dropping old tables and creating new ones
 2023-12-14 20:25:55: Loading data into tables
 2023-12-14 20:26:28: Done!
+2023-12-18 12:02:17: ----------------------Logger Initialized for machine_learning_optimization.py----------------------
+2023-12-18 12:02:17: Loading Data
+2023-12-18 12:03:09: Separating sample data for ML hyperparameter optimization.
+2023-12-18 12:03:12: Staring ML Hyperparameter Optimization
+2023-12-18 12:03:12: Optimizing Logistic Regression Hyperparameters
+2023-12-18 12:03:12: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-18 12:03:12: Optimizing for lbfgs | 0/3
+2023-12-18 12:03:31: Optimizing for liblinear | 1/3
+2023-12-18 12:03:42: Optimizing for newton-cg | 2/3
+2023-12-18 12:04:40: ----------------------Logger Initialized for machine_learning_optimization.py----------------------
+2023-12-18 12:04:40: Loading Data
+2023-12-18 12:05:42: Separating sample data for ML hyperparameter optimization.
+2023-12-18 12:05:46: Staring ML Hyperparameter Optimization
+2023-12-18 12:05:46: Optimizing Logistic Regression Hyperparameters
+2023-12-18 12:05:46: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-18 12:05:46: Optimizing for lbfgs | 0/3
+2023-12-18 12:06:06: Optimizing for liblinear | 1/3
+2023-12-18 12:06:17: Optimizing for newton-cg | 2/3
+2023-12-18 12:14:08: Plotting Results for Logistic Regression Hyperparameter Optimization
+2023-12-18 12:14:08: Plotting for lbfgs | accuracy
+2023-12-18 12:14:09: Plotting for liblinear | accuracy
+2023-12-18 12:14:09: Plotting for newton-cg | accuracy
+2023-12-18 12:14:10: Plotting for lbfgs | precision
+2023-12-18 12:14:10: Plotting for liblinear | precision
+2023-12-18 12:14:11: Plotting for newton-cg | precision
+2023-12-18 12:14:11: Plotting for lbfgs | recall
+2023-12-18 12:14:12: Plotting for liblinear | recall
+2023-12-18 12:14:12: Plotting for newton-cg | recall
+2023-12-18 12:14:13: Plotting for lbfgs | f1_score
+2023-12-18 12:14:13: Plotting for liblinear | f1_score
+2023-12-18 12:14:14: Plotting for newton-cg | f1_score
+2023-12-18 12:14:14: Optimizing Random Forest Classifier Hyperparameters
+2023-12-18 12:44:06: Plotting Results for Random Forest Hyperparameter Optimization
+2023-12-18 12:44:06: Plotting for accuracy
+2023-12-18 12:44:06: Plotting for precision
+2023-12-18 12:44:07: Plotting for recall
+2023-12-18 12:44:08: Plotting for f1_score
+2023-12-18 12:44:08: Saving Preliminary Grid Search Results
+2023-12-18 12:53:58: ----------------------Logger Initialized for machine_learning_optimization.py----------------------
+2023-12-18 12:53:58: Loading Data
+2023-12-18 12:54:51: Separating sample data for ML hyperparameter optimization.
+2023-12-18 12:54:55: Staring ML Hyperparameter Optimization
+2023-12-18 12:54:55: Optimizing Logistic Regression Hyperparameters
+2023-12-18 12:54:55: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-18 12:54:55: Optimizing for lbfgs | 0/3
+2023-12-18 12:55:27: Optimizing for liblinear | 1/3
+2023-12-18 12:55:45: Optimizing for newton-cg | 2/3
+2023-12-18 13:03:57: Plotting Results for Logistic Regression Hyperparameter Optimization
+2023-12-18 13:03:57: Plotting for lbfgs | accuracy
+2023-12-18 13:03:58: Plotting for liblinear | accuracy
+2023-12-18 13:03:58: Plotting for newton-cg | accuracy
+2023-12-18 13:03:58: Plotting for lbfgs | precision
+2023-12-18 13:03:59: Plotting for liblinear | precision
+2023-12-18 13:03:59: Plotting for newton-cg | precision
+2023-12-18 13:03:59: Plotting for lbfgs | recall
+2023-12-18 13:04:00: Plotting for liblinear | recall
+2023-12-18 13:04:00: Plotting for newton-cg | recall
+2023-12-18 13:04:00: Plotting for lbfgs | f1_score
+2023-12-18 13:04:00: Plotting for liblinear | f1_score
+2023-12-18 13:04:01: Plotting for newton-cg | f1_score
+2023-12-18 13:04:01: Optimizing Random Forest Classifier Hyperparameters
+2023-12-18 13:37:32: Plotting Results for Random Forest Hyperparameter Optimization
+2023-12-18 13:37:32: Plotting for accuracy
+2023-12-18 13:37:32: Plotting for precision
+2023-12-18 13:37:33: Plotting for recall
+2023-12-18 13:37:33: Plotting for f1_score
+2023-12-18 13:37:34: Saving Preliminary Grid Search Results
+2023-12-19 08:35:29: ----------------------Logger Initialized for machine_learning_optimization.py----------------------
+2023-12-19 08:35:29: Loading Data
+2023-12-19 08:36:35: Separating sample data for ML hyperparameter optimization.
+2023-12-19 08:36:40: Staring ML Hyperparameter Optimization
+2023-12-19 08:36:40: Optimizing Logistic Regression Hyperparameters
+2023-12-19 08:36:40: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-19 08:36:40: Optimizing for lbfgs | 0/3
+2023-12-19 08:38:59: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 08:38:59: Loading Data
+2023-12-19 08:39:57: Separating sample data for ML hyperparameter optimization.
+2023-12-19 08:40:02: Staring ML Hyperparameter Optimization
+2023-12-19 08:40:02: Optimizing Logistic Regression Hyperparameters
+2023-12-19 08:40:02: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-19 08:40:02: Optimizing for lbfgs | 0/3
+2023-12-19 08:43:21: Optimizing for liblinear | 1/3
+2023-12-19 08:46:13: Optimizing for newton-cg | 2/3
+2023-12-19 09:11:38: Plotting Results for Logistic Regression Hyperparameter Optimization
+2023-12-19 09:11:38: Plotting for lbfgs | accuracy
+2023-12-19 09:30:12: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 09:30:12: Loading Data
+2023-12-19 09:31:13: Separating sample data for ML hyperparameter optimization.
+2023-12-19 09:31:17: Staring ML Hyperparameter Optimization
+2023-12-19 09:31:17: Optimizing Logistic Regression Hyperparameters
+2023-12-19 09:31:17: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-19 09:31:17: Optimizing for lbfgs | 0/3
+2023-12-19 09:34:33: Optimizing for liblinear | 1/3
+2023-12-19 09:37:48: Optimizing for newton-cg | 2/3
+2023-12-19 10:02:38: Plotting Results for Logistic Regression Hyperparameter Optimization
+2023-12-19 10:02:38: Plotting for lbfgs
+2023-12-19 10:02:39: Plotting for liblinear
+2023-12-19 10:02:39: Plotting for newton-cg
+2023-12-19 10:02:39: Optimizing Random Forest Classifier Hyperparameters
+2023-12-19 10:28:31: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 10:28:31: Loading Data
+2023-12-19 10:29:29: Separating sample data for ML hyperparameter optimization.
+2023-12-19 10:29:33: Staring ML Hyperparameter Optimization
+2023-12-19 10:29:33: Optimizing Logistic Regression Hyperparameters
+2023-12-19 10:29:33: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-19 10:29:33: Optimizing for lbfgs | 0/3
+2023-12-19 10:32:39: Optimizing for liblinear | 1/3
+2023-12-19 10:36:08: Optimizing for newton-cg | 2/3
+2023-12-19 10:58:32: Plotting Results for Logistic Regression Hyperparameter Optimization
+2023-12-19 10:58:32: Plotting for lbfgs
+2023-12-19 10:58:32: Plotting for liblinear
+2023-12-19 10:58:32: Plotting for newton-cg
+2023-12-19 10:58:33: Optimizing Random Forest Classifier Hyperparameters
+2023-12-19 11:33:12: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 11:33:12: Loading Data
+2023-12-19 11:34:13: Separating sample data for ML hyperparameter optimization.
+2023-12-19 11:34:18: Staring ML Hyperparameter Optimization
+2023-12-19 11:34:18: Optimizing Logistic Regression Hyperparameters
+2023-12-19 11:34:18: Optimizing for solvers: ['lbfgs', 'liblinear', 'newton-cg']
+2023-12-19 11:34:18: Optimizing for lbfgs | 0/3
+2023-12-19 11:37:40: Optimizing for liblinear | 1/3
+2023-12-19 11:41:08: Optimizing for newton-cg | 2/3
+2023-12-19 12:06:31: Plotting Results for Logistic Regression Hyperparameter Optimization
+2023-12-19 12:06:31: Plotting for lbfgs
+2023-12-19 12:06:32: Plotting for liblinear
+2023-12-19 12:06:32: Plotting for newton-cg
+2023-12-19 12:06:32: Optimizing Random Forest Classifier Hyperparameters
+2023-12-19 12:20:34: Plotting Results for Random Forest Hyperparameter Optimization
+2023-12-19 12:20:34: Saving Preliminary Grid Search Results
+2023-12-19 14:35:27: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 14:35:27: Loading Data
+2023-12-19 14:36:27: Separating sample data for ML hyperparameter optimization.
+2023-12-19 14:36:31: Staring ML Hyperparameter Optimization
+2023-12-19 14:36:31: Optimizing Support Vector Classifier Hyperparameters
+2023-12-19 14:37:31: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 14:37:31: Loading Data
+2023-12-19 14:38:28: Separating sample data for ML hyperparameter optimization.
+2023-12-19 14:38:32: Staring ML Hyperparameter Optimization
+2023-12-19 14:38:32: Optimizing Support Vector Classifier Hyperparameters
+2023-12-19 14:42:33: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 14:42:33: Loading Data
+2023-12-19 14:43:28: Separating sample data for ML hyperparameter optimization.
+2023-12-19 14:43:32: Staring ML Hyperparameter Optimization
+2023-12-19 14:43:32: Optimizing Support Vector Classifier Hyperparameters
+2023-12-19 15:02:41: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 15:02:41: Loading Data
+2023-12-19 15:03:38: Separating sample data for ML hyperparameter optimization.
+2023-12-19 15:03:42: Staring ML Hyperparameter Optimization
+2023-12-19 15:03:42: Optimizing Support Vector Classifier Hyperparameters
+2023-12-19 15:05:01: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 15:05:01: Loading Data
+2023-12-19 15:05:46: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 15:05:46: Loading Data
+2023-12-19 15:06:39: Separating sample data for ML hyperparameter optimization.
+2023-12-19 15:06:43: Staring ML Hyperparameter Optimization
+2023-12-19 15:06:43: Optimizing Support Vector Classifier Hyperparameters
+2023-12-19 15:33:56: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 15:33:56: Loading Data
+2023-12-19 15:34:48: Separating sample data for ML hyperparameter optimization.
+2023-12-19 15:34:52: Staring ML Hyperparameter Optimization
+2023-12-19 15:34:52: Optimizing RandomForestClassifier Hyperparameters
+2023-12-19 15:35:23: Plotting Results for RandomForestClassifier Hyperparameter Optimization
+2023-12-19 15:35:23: Optimizing LogisticRegression Hyperparameters
+2023-12-19 15:35:26: Plotting Results for LogisticRegression Hyperparameter Optimization
+2023-12-19 15:35:26: Optimizing Support Vector Classifier Hyperparameters
+2023-12-19 15:36:13: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 15:36:13: Loading Data
+2023-12-19 15:37:10: Separating sample data for ML hyperparameter optimization.
+2023-12-19 15:37:15: Staring ML Hyperparameter Optimization
+2023-12-19 15:37:15: Optimizing RandomForestClassifier Hyperparameters
+2023-12-19 15:37:49: Plotting Results for RandomForestClassifier Hyperparameter Optimization
+2023-12-19 15:37:50: Optimizing LogisticRegression Hyperparameters
+2023-12-19 15:37:52: Plotting Results for LogisticRegression Hyperparameter Optimization
+2023-12-19 15:37:53: Saving Preliminary Grid Search Results
+2023-12-19 15:37:53: Done!
+2023-12-19 15:44:59: ----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------
+2023-12-19 15:44:59: Loading Data
+2023-12-19 15:45:54: Separating sample data for ML hyperparameter optimization.
+2023-12-19 15:45:58: Staring ML Hyperparameter Optimization
+2023-12-19 15:45:58: Optimizing RandomForestClassifier Hyperparameters
