@@ -51,3 +51,4 @@ The optimal threshold of 56% yields a profit margin approximately 130% higher th
 
 ### Exploratory Data Analysis
 
+An automated EDA report can be found [here](https://github.com/Andrerg01/Lending_Club_ML_Analysis/blob/main/outputs/2023_12_19/reports/01-Exploratory_Data_Analysis_Report.md)
