@@ -262,6 +262,7 @@ logger.log("Creating Queries")
 drop_loans_data_ML_query = 'DROP TABLE IF EXISTS loans_data_ML'
 
 # Query to create a table for the loans data suited for machine learning
+loans_data_ML.reset_index(inplace=True)
 create_loans_data_ML_table_query = 'CREATE TABLE loans_data_ML (' + ', '.join([f"\"{col}\" {col_type}" for col, col_type in zip(loans_data_ML.columns, [map_dtype_to_sqlite(str(loans_data_ML[col].dtype)) for col in loans_data_ML.columns])]) + ')'
 
 logger.log("Dropping old tables and creating new ones")

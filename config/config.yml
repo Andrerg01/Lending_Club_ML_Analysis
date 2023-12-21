@@ -1,5 +1,5 @@
 base:
-    tag: 'prototype'
+    tag: '2023_12_19'
     columns_of_interest: ['id', 'loan_amnt', 'term_months', 'int_rate', 'installment', 'grade', 'sub_grade',
                        'home_ownership', 'annual_inc', 'verification_status',
                        'issue_d_unix', 'loan_status', 'purpose', 'dti', 
@@ -26,5 +26,5 @@ machine_learning:
     random_state: 42
     optimization_sample_size: 10000
     test_size: 0.2
-    bayes_search_iterations: 100
+    bayes_search_iterations: 400
     algorithms: ['RandomForestClassifier', 'LogisticRegression'] # 'RandomForestClassifier', 'LogisticRegression', 'SupportVectorClassifier'

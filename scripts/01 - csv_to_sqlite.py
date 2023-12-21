@@ -156,7 +156,7 @@ sqlite_file = os.path.join(f'outputs/{tag}/data/{sqlite_file}')
 # Create necessary directories and print the result
 print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/data/')))
 print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/log/')))
-print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/figure/')))
+print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/figures/')))
 print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/stats/')))
 print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/reports/')))
 print(create_directory_if_not_exists(os.path.join(f'outputs/{tag}/models/')))

@@ -205,11 +205,13 @@ for algorithm in algorithms:
     logger.log(f"Optimizing {algorithm} Hyperparameters")
 
     if algorithm == "LogisticRegression":
-        clf = LogisticRegression(class_weight='balanced', max_iter = 1000000)
+        clf = LogisticRegression()
         param_grid = {
             'C': Real(1e-10, 1e10, 'log-uniform'),
             'solver': ['lbfgs'],
-            'penalty': ['l2']
+            'penalty': ['l2'],
+            'class_weight': ['balanced'],
+            'max_iter': [1000000]
             }
         plot_param = 'C'
 
@@ -277,7 +279,6 @@ for algorithm in algorithms:
     ax.set_xlabel(plot_param, fontsize=fontsize)
     ax.set_ylabel(f'Mean Score', fontsize=fontsize)
     ax.set_title(f'{algorithm} Hyperparameter Optimization', fontsize=fontsize)
-    ax.legend()
 
     fig.savefig(os.path.join(out_dir_figures, f"{algorithm}_BayesSearchCV.png"))
     plt.close('all')
@@ -285,5 +286,25 @@ for algorithm in algorithms:
 logger.log("Saving Preliminary Grid Search Results")
 
 cummulative_results.to_csv(os.path.join(out_dir_stats, "Cummulative_Results_BayesSearchCV.csv"))
+
+logger.log("Plotting Bayes Search Results")
+
+best_bw = bestbandwidth(cummulative_results['mean_test_score'].values)
+maxX = cummulative_results['mean_test_score'].max()
+minX = cummulative_results['mean_test_score'].min()
+nBins = int((maxX - minX)/best_bw)
+bins = np.linspace(minX, maxX, nBins)
+fig, ax = plt.subplots(figsize=[figsize_x, figsize_y])
+for algorithm in algorithms:
+    data = cummulative_results[cummulative_results['ML_model'] == algorithm]['mean_test_score']
+    sns.histplot(data, kde=True, label=algorithm, ax=ax, bins=bins, element='step')
+    
+ax.set_xlabel("Mean Test Score", fontsize=fontsize)
+ax.set_ylabel("Count", fontsize=fontsize)
+ax.set_title("Distribution of Test Scores in Bayesian Search For Each Machine Learning Algorithm", fontsize=fontsize)
+ax.legend()
+fig.tight_layout()
+fig.savefig(os.path.join(out_dir_figures, "BayesSearchCV_Distribution.png"))
+plt.close('all')
 
 logger.log("Done!")
