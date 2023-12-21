@@ -158,6 +158,7 @@ figsize_x = config['plotting']['figure_xsize']
 figsize_y = config['plotting']['figure_ysize']
 bayes_search_iterations = config['machine_learning']['bayes_search_iterations']
 random_state = config['machine_learning']['random_state']
+n_jobs = config['machine_learning']['n_jobs']
 
 optimization_sample_size = config['machine_learning']['optimization_sample_size']
 
@@ -211,6 +212,9 @@ cummulative_results = pd.read_csv(os.path.join(out_dir_stats, 'Cummulative_Resul
 
 model = cummulative_results.sort_values('mean_test_score').iloc[-1]['ML_model']
 params = string_to_dict(cummulative_results.sort_values('mean_test_score').iloc[-1]['params'])
+params['verbose'] = 1
+params['random_state'] = random_state
+params['n_jobs'] = n_jobs
 
 logger.log("Loading best parameters and defining")
 
@@ -235,8 +239,9 @@ logger.log("Making predictions with the fit model")
 y_pred = clf.predict(X_test)
 
 logger.log("Computing cross-validations")
+
 train_sizes, train_scores, test_scores = learning_curve(
-    clf, X, y, cv=5, n_jobs=-1, 
+    clf, X, y, cv=5, n_jobs=1, 
     train_sizes=np.linspace(.1, 1.0, 10),
     verbose=False)
 

@@ -26,5 +26,6 @@ machine_learning:
     random_state: 42
     optimization_sample_size: 10000
     test_size: 0.2
-    bayes_search_iterations: 400
+    bayes_search_iterations: 100
     algorithms: ['RandomForestClassifier', 'LogisticRegression'] # 'RandomForestClassifier', 'LogisticRegression', 'SupportVectorClassifier'
+    n_jobs: 4

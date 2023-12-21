@@ -144,3 +144,5 @@ data/*.csv
 outputs/*/data
 outputs/*/log
 tmp
+**/*.pkl
+**/*.sqlite

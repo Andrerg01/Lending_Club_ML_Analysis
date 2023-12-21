@@ -111,6 +111,22 @@ def map_dtype_to_sqlite(col_type):
     else:  # Default case, particularly for 'object' and other unhandled types
         return 'TEXT'
 
+def time_formatting_function(time_delta):
+    days = time_delta.days
+    hours, remainder = divmod(time_delta.seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+
+    formatted_time = ""
+    if days > 0:
+        formatted_time += f"{days} days, "
+    if hours > 0 or days > 0:  # Include hours if there are any days
+        formatted_time += f"{hours} hours, "
+    if minutes > 0 or hours > 0 or days > 0:  # Include minutes if there are any hours or days
+        formatted_time += f"{minutes} minutes, "
+    formatted_time += f"{seconds} seconds"
+
+    return formatted_time
+
 print("Reading Command Line Arguments")
 
 # Initialize an argument parser for command line argument parsing
@@ -125,7 +141,6 @@ args = parser.parse_args()
 
 # Store the path to the configuration file from the parsed arguments
 config_file_path = args.config_file_path
-
 
 print(f"Reading Config File {config_file_path}")
 
@@ -147,13 +162,13 @@ figsize_y = config['plotting']['figure_ysize']
 bayes_search_iterations = config['machine_learning']['bayes_search_iterations']
 random_state = config['machine_learning']['random_state']
 algorithms = config['machine_learning']['algorithms']
+n_jobs = config['machine_learning']['n_jobs']
 
 optimization_sample_size = config['machine_learning']['optimization_sample_size']
 
 out_dir_figures = f"outputs/{tag}/figures"
 out_dir_log = f"outputs/{tag}/log"
 out_dir_stats = f"outputs/{tag}/stats"
-
 
 sqlite_file = f"outputs/{tag}/data/{sqlite_file}"
 
@@ -164,7 +179,7 @@ print("Initializing Logger")
 # Initialize a Logger instance using the configuration
 logger = Logger(config)
 
-logger.log("----------------------Logger Initialized for machine_learing_optimization_BayesSearchCV.py----------------------")
+logger.log("----------------------Logger Initialized for machine_learing_hyperparameter_optimization_BayesSearchCV.py----------------------")
 
 logger.log("Loading Data")
 # Defining the connection to the database
@@ -172,87 +187,148 @@ conn = sqlite3.connect(sqlite_file)
 
 # Loading data into dataframe
 data_fetch_query = f"""SELECT * 
-                       FROM loans_data_ML
-                       ORDER BY RANDOM()"""
+                       FROM loans_data_ML"""
 
 loans_data = pd.read_sql_query(data_fetch_query, conn, index_col='id')
+
+# Loading data into dataframe
+data_fetch_query = f"""SELECT id, total_pymnt
+                       FROM loans_data"""
+
+loans_data_paymnts = pd.read_sql_query(data_fetch_query, conn)
+
+loans_data_paymnts = loans_data_paymnts[loans_data_paymnts['id'].apply(lambda x: x in loans_data.index)]
+
+combined_data = pd.merge(loans_data, loans_data_paymnts, on='id', how='inner')
+combined_data['Profit_or_Loss'] = combined_data['total_pymnt'] - combined_data['loan_amnt']
 
 # Closing connection
 conn.close()
 
 logger.log("Separating sample data for ML hyperparameter optimization.")
 
-sample_data = loans_data.sample(optimization_sample_size)
+sample_data = combined_data.sample(optimization_sample_size, random_state=random_state)
 
 if not sys.warnoptions:
     warnings.simplefilter("ignore")
     # Since we're setting this at the sys level, it should not be overridden
     os.environ["PYTHONWARNINGS"] = "ignore"  # Also affect subprocesses
    
-X_opt, y_opt = sample_data.drop('loan_status', axis='columns').values, sample_data['loan_status'].values
+X_opt, y_opt = sample_data.drop('loan_status', axis='columns'), sample_data['loan_status']
 
-X, y = loans_data.drop('loan_status', axis='columns').values, loans_data['loan_status'].values
+X, y = combined_data.drop('loan_status', axis='columns'), combined_data['loan_status']
 
 ML_columns = loans_data.drop('loan_status', axis='columns').columns
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=random_state)
 
+X_train, X_train_profit_or_loss = X_train.drop(['id', 'total_pymnt', 'Profit_or_Loss'], axis='columns'), X_train['Profit_or_Loss']
+
+X_opt, X_opt_profit_or_loss = X_opt.drop(['id', 'total_pymnt', 'Profit_or_Loss'], axis='columns'), X_opt['Profit_or_Loss']
+
 cummulative_results = None
+
+average_profit_0 = np.mean(combined_data[combined_data['loan_status'] == 0]['Profit_or_Loss'])
+average_profit_1 = np.mean(combined_data[combined_data['loan_status'] == 1]['Profit_or_Loss'])
+
+logger.log("Defining Profit Scorer")
+
+def profit_scorer(y, y_pred):
+    # Compute probabilities for class at position [1]
+    probabilities = y_pred
+    
+    # Assuming X_profit_or_loss is globally accessible and represents the profit or loss for each instance
+    global average_profit_0, average_profit_1
+
+    profit_or_loss_array = average_profit_0*(1-y) + average_profit_1*y
+    # Initialize profits array
+    profits = np.zeros(50)
+    for i, thresh in enumerate(np.linspace(0, 1, 50)):
+        # Calculate profit for each threshold
+        profits[i] = profit_or_loss_array[probabilities <= thresh].sum()
+    # Calculate and return max relative profit
+    max_relative_profit = np.max(profits) / np.sum(profit_or_loss_array)
+    return max_relative_profit
+
+max_profit_scorer = make_scorer(profit_scorer, greater_is_better=True, needs_proba=True)
 
 logger.log("Staring ML Hyperparameter Optimization")
 
+param_grids = {"LogisticRegression":{
+                    'C': Real(1e-10, 1e10, 'log-uniform'),
+                    'solver': ['lbfgs'],
+                    'penalty': ['l2'],
+                    'class_weight': ['balanced'],
+                    'max_iter': [1000000],
+                    'random_state': [random_state]
+                    },
+              "RandomForestClassifier":{
+                    'n_estimators': Integer(10, 1000, 'log-uniform'),
+                    'criterion': Categorical(['gini', 'entropy']),
+                    'max_features': Categorical(['sqrt', 'log2']),
+                    'max_depth': Integer(1, 100),
+                    'min_samples_split': Integer(2, 50),
+                    'min_samples_leaf': Integer(1, 10),
+                    'bootstrap': Categorical([True, False]),
+                    'class_weight': ['balanced'],
+                    'random_state': [random_state]
+                    },
+               "SupportVectorClassifier":{
+                    'C': Real(1e-6, 1e+6, 'log-uniform'),
+                    'kernel': Categorical(['linear', 'poly', 'rbf', 'sigmoid']),
+                    'degree': Integer(1, 5),  # only used with 'poly' kernel
+                    'gamma': Categorical(['scale', 'auto']),
+                    'class_weight': ['balanced'],
+                    'probability': [True],
+                    'random_state': [random_state]
+               }}
+
+def is_numerical_param(param):
+    return (str(type(param)) != "<class 'list'>") and (str(type(param)) != "<class 'skopt.space.space.Categorical'>")
+
+def callback(res):
+    global time_start
+    global logger
+    global bayes_search_iterations
+    global algorithm
+
+    time_elapsed = datetime.datetime.now() - time_start
+    eta = time_elapsed / len(res.x_iters) * bayes_search_iterations - time_elapsed
+
+    logger.log(f"Iteration {len(res.x_iters)} / {bayes_search_iterations} for {algorithm}")
+    logger.log(f"Time Elapsed: {time_formatting_function(time_elapsed)}")
+    logger.log(f"ETA: {time_formatting_function(eta)}")
+    logger.log(f"Best Score so far: {np.max(-res.func_vals)}")
+    logger.log(f"Best Parameters so far: {res.x_iters[np.argmax(-res.func_vals)]}")
+    logger.log(f"Current Parameters: {res.x}")
+    logger.log(f'Average score: {np.mean(-res.func_vals)}')
+
+initial_params = {algorithm:{key: value[0] for key, value in param_grids[algorithm].items() if str(type(value)) == "<class 'list'>"} for algorithm in param_grids.keys()}
+
 for algorithm in algorithms:
     logger.log(f"Optimizing {algorithm} Hyperparameters")
-
+    param_grid = param_grids[algorithm]
+    ini_params = initial_params[algorithm]
     if algorithm == "LogisticRegression":
-        clf = LogisticRegression()
-        param_grid = {
-            'C': Real(1e-10, 1e10, 'log-uniform'),
-            'solver': ['lbfgs'],
-            'penalty': ['l2'],
-            'class_weight': ['balanced'],
-            'max_iter': [1000000]
-            }
-        plot_param = 'C'
-
+        clf = LogisticRegression(**ini_params)
     elif algorithm == "RandomForestClassifier":
-        clf = RandomForestClassifier(class_weight='balanced')
-
-        param_grid = {
-        'n_estimators': Integer(10, 1000, 'log-uniform'),
-        'criterion': Categorical(['gini', 'entropy']),
-        'max_features': Categorical(['sqrt', 'log2']),
-        'max_depth': Integer(1, 100),
-        'min_samples_split': Integer(2, 50),
-        'min_samples_leaf': Integer(1, 10),
-        'bootstrap': Categorical([True, False]),
-        'class_weight': ['balanced']
-        }
-        plot_param = 'n_estimators'
-    
+        clf = RandomForestClassifier(**ini_params) 
     elif algorithm == "SupportVectorClassifier":
-        clf = SupportVectorClassifier(class_weight='balanced', probability=True)  # probability=True if you need probability estimates
-
-        param_grid = {
-            'C': Real(1e-6, 1e+6, 'log-uniform'),
-            'kernel': Categorical(['linear', 'poly', 'rbf', 'sigmoid']),
-            'degree': Integer(1, 5),  # only used with 'poly' kernel
-            'gamma': Categorical(['scale', 'auto']),
-            'class_weight': ['balanced'],
-            'probability': [True]
-        }
-        plot_param = 'C'
+        clf = SupportVectorClassifier(**ini_params)
 
     grid_search = BayesSearchCV(estimator=clf,
                                     search_spaces=param_grid,
                                     cv=5,
                                     verbose=False,
-                                    scoring=make_scorer(recall_score),
+                                    scoring=max_profit_scorer,
                                     n_iter=bayes_search_iterations,
-                                    n_jobs=-1,
+                                    n_jobs=n_jobs,
                                     random_state=random_state)
-    np.int = int
-    grid_search.fit(X_opt, y_opt)
+
+    time_start = datetime.datetime.now()
+
+    np.int = int 
+    grid_search.fit(X_opt, y_opt, callback=callback)
 
     results = pd.DataFrame(grid_search.cv_results_)
     results['ML_model'] = [algorithm]*len(results)
@@ -264,24 +340,23 @@ for algorithm in algorithms:
 
     logger.log(f"Plotting Results for {algorithm} Hyperparameter Optimization")
 
-    ml_mask = cummulative_results['ML_model'] == algorithm
-    ml_results = cummulative_results[ml_mask]
+    for j, param in enumerate([key for key, value in param_grid.items() if is_numerical_param(value)]):
+        fig, ax = plt.subplots(figsize=[figsize_x, figsize_y])
+        x_plot = results['params'].apply(lambda x: x[param])
 
-    fig, ax = plt.subplots(figsize=[figsize_x, figsize_y])
+        best_bw = bestbandwidth(x_plot)
+        max_x = x_plot.max()
+        min_x = x_plot.min()
+        n_bins = int((max_x - min_x)/best_bw)
+        bins = np.linspace(min_x, max_x, n_bins)
+        sns.histplot(x_plot, kde=True, ax=ax, bins=bins, element='step')
+        ax.set_xlabel(param, fontsize=fontsize)
+        ax.set_ylabel(f'Count', fontsize=fontsize)
+        ax.set_title(f'{algorithm} | {param} Distribution on Bayes Search', fontsize=fontsize)
 
-    x_plot = ml_results['params'].apply(lambda x: x[plot_param])
-    y_plot = ml_results[f'mean_test_score']
-    y_std = ml_results[f'std_test_score']
-
-    ax.errorbar(x_plot, y_plot, yerr=y_std, fmt='o')
-    ax.scatter(x_plot, y_plot)
-    ax.set_xscale('log')
-    ax.set_xlabel(plot_param, fontsize=fontsize)
-    ax.set_ylabel(f'Mean Score', fontsize=fontsize)
-    ax.set_title(f'{algorithm} Hyperparameter Optimization', fontsize=fontsize)
-
-    fig.savefig(os.path.join(out_dir_figures, f"{algorithm}_BayesSearchCV.png"))
-    plt.close('all')
+        fig.savefig(os.path.join(out_dir_figures, f"{algorithm}_{param}_Distribution_BayesSearchCV.png"))
+        
+        plt.close('all')
 
 logger.log("Saving Preliminary Grid Search Results")
 
@@ -299,7 +374,7 @@ for algorithm in algorithms:
     data = cummulative_results[cummulative_results['ML_model'] == algorithm]['mean_test_score']
     sns.histplot(data, kde=True, label=algorithm, ax=ax, bins=bins, element='step')
     
-ax.set_xlabel("Mean Test Score", fontsize=fontsize)
+ax.set_xlabel("Mean Relative Profit Score", fontsize=fontsize)
 ax.set_ylabel("Count", fontsize=fontsize)
 ax.set_title("Distribution of Test Scores in Bayesian Search For Each Machine Learning Algorithm", fontsize=fontsize)
 ax.legend()
