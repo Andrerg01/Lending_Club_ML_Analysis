@@ -30,7 +30,7 @@ python "scripts/06 - machine_learning_results_and_final_analysis.py" --config "c
 
 Below are three pivotal plots demonstrating the model's predictive capability (confusion matrix), the significance of each feature in the prediction (Feature Importances), and a Learning Curve to verify the model's fitting quality.
 
-<img src="https://github.com/Andrerg01/Lending_Club_ML_Analysis/assets/29161499/287e5d9a-8fbc-4fdc-aa68-0356cc3c13f5" height="225"/>
+<img src="https://github.com/Andrerg01/Lending_Club_ML_Analysis/assets/29161499/287e5d9a-8fbc-4fdc-aa68-0356cc3c13f5" height="225" width="300"/>
 <img src="https://github.com/Andrerg01/Lending_Club_ML_Analysis/assets/29161499/396ec2a0-7527-4a00-88fd-2c700235123a" height="225"/>
 <img src="https://github.com/Andrerg01/Lending_Club_ML_Analysis/assets/29161499/59406ee8-fe8c-4801-a939-e138bbed2814" height="225"/>
 
@@ -51,3 +51,4 @@ The optimal threshold of 56% yields a profit margin approximately 130% higher th
 
 ### Exploratory Data Analysis
 
+You can find the [Tableau Dashboard here](https://scholar.google.com/citations?user=4d66dpcAAAAJ&hl=en)
