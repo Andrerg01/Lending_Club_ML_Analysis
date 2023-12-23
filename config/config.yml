@@ -1,5 +1,5 @@
 base:
-    tag: '2023_12_19'
+    tag: '2023_12_21'
     columns_of_interest: ['id', 'loan_amnt', 'term_months', 'int_rate', 'installment', 'grade', 'sub_grade',
                        'home_ownership', 'annual_inc', 'verification_status',
                        'issue_d_unix', 'loan_status', 'purpose', 'dti', 

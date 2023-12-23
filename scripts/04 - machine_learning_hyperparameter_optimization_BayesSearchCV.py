@@ -263,12 +263,12 @@ param_grids = {"LogisticRegression":{
                     'random_state': [random_state]
                     },
               "RandomForestClassifier":{
-                    'n_estimators': Integer(10, 1000, 'log-uniform'),
+                    'n_estimators': Integer(10, 2000, 'log-uniform'),
                     'criterion': Categorical(['gini', 'entropy']),
                     'max_features': Categorical(['sqrt', 'log2']),
-                    'max_depth': Integer(1, 100),
-                    'min_samples_split': Integer(2, 50),
-                    'min_samples_leaf': Integer(1, 10),
+                    'max_depth': Integer(1, 200),
+                    'min_samples_split': Integer(2, 100),
+                    'min_samples_leaf': Integer(1, 20),
                     'bootstrap': Categorical([True, False]),
                     'class_weight': ['balanced'],
                     'random_state': [random_state]
@@ -343,16 +343,24 @@ for algorithm in algorithms:
     for j, param in enumerate([key for key, value in param_grid.items() if is_numerical_param(value)]):
         fig, ax = plt.subplots(figsize=[figsize_x, figsize_y])
         x_plot = results['params'].apply(lambda x: x[param])
-
+    
         best_bw = bestbandwidth(x_plot)
         max_x = x_plot.max()
         min_x = x_plot.min()
         n_bins = int((max_x - min_x)/best_bw)
         bins = np.linspace(min_x, max_x, n_bins)
+
+        if param_grid[param].prior == 'log-uniform':
+            bins = np.exp(np.linspace(np.log(min_x), np.log(max_x), n_bins))
+        else:
+            bins = np.linspace(min_x, max_x, n_bins)
+
         sns.histplot(x_plot, kde=True, ax=ax, bins=bins, element='step')
         ax.set_xlabel(param, fontsize=fontsize)
         ax.set_ylabel(f'Count', fontsize=fontsize)
         ax.set_title(f'{algorithm} | {param} Distribution on Bayes Search', fontsize=fontsize)
+        if param_grid[param].prior == 'log-uniform':
+            ax.set_xscale('log')
 
         fig.savefig(os.path.join(out_dir_figures, f"{algorithm}_{param}_Distribution_BayesSearchCV.png"))
         
