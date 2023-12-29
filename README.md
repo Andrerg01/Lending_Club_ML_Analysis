@@ -51,4 +51,4 @@ The optimal threshold of 56% yields a profit margin approximately 130% higher th
 
 ### Exploratory Data Analysis
 
-You can find the [Tableau Dashboard here](https://scholar.google.com/citations?user=4d66dpcAAAAJ&hl=en)
+You can find the [Tableau Dashboard here](https://public.tableau.com/app/profile/andre.guimaraes/viz/LendingClubEDA_17032888173050/EDADashboard?publish=yes)
